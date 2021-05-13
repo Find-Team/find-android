@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_mypage"
+        android:id="@+id/layout_my_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/mypage_gradient_bg_img"
+        android:background="@drawable/bg_my_page_gradient"
         tools:context=".mypage.MyPageFragment">
 
         <ImageView
-            android:id="@+id/bg_mypage_background"
+            android:id="@+id/bg_my_page_white"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="137dp"
@@ -19,20 +19,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:id="@+id/ic_mypage_setting"
+        <ImageButton
+            android:id="@+id/btn_my_page_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/icon_setting"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_my_page_setting"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_mypage_profile"
+            android:id="@+id/img_my_page_profile"
             android:layout_width="155dp"
             android:layout_height="155dp"
             android:layout_marginTop="41dp"
@@ -42,7 +45,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
