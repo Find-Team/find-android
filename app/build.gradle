@@ -51,4 +51,6 @@ dependencies {
 
     // Fragment KTX
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    // Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
