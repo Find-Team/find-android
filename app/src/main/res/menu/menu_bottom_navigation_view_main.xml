@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_main_my_page"
+        android:icon="@drawable/selector_main_ic_my_page"
+        android:title="" />
+    <item
+        android:id="@+id/menu_main_find"
+        android:icon="@drawable/selector_main_ic_find"
+        android:title="" />
+    <item
+        android:id="@+id/menu_main_matching"
+        android:icon="@drawable/selector_main_ic_matching"
+        android:title="" />
+    <item
+        android:id="@+id/menu_main_reserve"
+        android:icon="@drawable/selector_main_ic_reserve"
+        android:title="" />
+</menu>
