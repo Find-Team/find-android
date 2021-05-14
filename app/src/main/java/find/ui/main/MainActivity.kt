@@ -7,10 +7,10 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import find.ui.R
 import find.ui.databinding.ActivityMainBinding
-import find.ui.find.FindFragment
 import find.ui.matching.MatchingFragment
 import find.ui.mypage.MyPageFragment
 import find.ui.reserve.ReserveFragment
+import find.ui.scan.ScanFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 override fun createFragment(position: Int): Fragment {
                     return when (position) {
                         0 -> MyPageFragment()
-                        1 -> FindFragment()
+                        1 -> ScanFragment()
                         2 -> MatchingFragment()
                         3 -> ReserveFragment()
                         else -> throw IndexOutOfBoundsException()
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                     binding.bottomNavigationViewMain.selectedItemId =
                         when (position) {
                             0 -> R.id.menu_main_my_page
-                            1 -> R.id.menu_main_find
+                            1 -> R.id.menu_main_scan
                             2 -> R.id.menu_main_matching
                             3 -> R.id.menu_main_reserve
                             else -> throw IndexOutOfBoundsException()
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 binding.vpMain.currentItem =
                     when (it.itemId) {
                         R.id.menu_main_my_page -> 0
-                        R.id.menu_main_find -> 1
+                        R.id.menu_main_scan -> 1
                         R.id.menu_main_matching -> 2
                         R.id.menu_main_reserve -> 3
                         else -> throw IndexOutOfBoundsException()

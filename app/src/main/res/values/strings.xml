@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">FindUI</string>
+
+    <!-- Scan -->
+    <string name="scan_title">상대 찾기</string>
+    <string name="scan_tab_find">FIND</string>
+    <string name="scan_tab_found">FOUND</string>
 </resources>
