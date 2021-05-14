@@ -1,10 +1,14 @@
 <resources>
     <color name="black">#000000</color>
     <color name="black_33">#333333</color>
+    <color name="gray_82">#828282</color>
+    <color name="gray_4f">#4f4f4f</color>
     <color name="white">#ffffff</color>
     <color name="purple_7d5fff">#7d5fff</color>
     <color name="purple_9980fa">#9980fa</color>
     <color name="purple_e7e1ff">#e7e1ff</color>
     <color name="mint_81ec">#81ecec</color>
+    <color name="mint_50df">#50dfdf</color>
     <color name="red_ff7675">#ff7675</color>
+    <color name="red_eb57">#eb5757</color>
 </resources>
