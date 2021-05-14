@@ -5,8 +5,8 @@
         android:icon="@drawable/selector_main_ic_my_page"
         android:title="" />
     <item
-        android:id="@+id/menu_main_find"
-        android:icon="@drawable/selector_main_ic_find"
+        android:id="@+id/menu_main_scan"
+        android:icon="@drawable/selector_main_ic_scan"
         android:title="" />
     <item
         android:id="@+id/menu_main_matching"

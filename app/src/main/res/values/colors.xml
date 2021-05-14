@@ -1,5 +1,6 @@
 <resources>
     <color name="black">#000000</color>
+    <color name="black_33">#333333</color>
     <color name="white">#ffffff</color>
     <color name="purple_7d5fff">#7d5fff</color>
     <color name="purple_9980fa">#9980fa</color>
