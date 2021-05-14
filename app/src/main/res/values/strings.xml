@@ -6,6 +6,7 @@
     <string name="scan_tab_find">FIND</string>
     <string name="scan_tab_found">FOUND</string>
 
+
     <!-- MyPage -->
     <string name="my_page_guide">프로필 작성을 완료해주세요!</string>
     <string name="my_page_preview">프로필 미리보기</string>
@@ -14,4 +15,14 @@
     <string name="my_page_title_connected">연결된 상대</string>
     <string name="my_page_title_edit_profile">프로필 수정</string>
     <string name="my_page_title_interview">인터뷰 하기</string>
+
+    <!-- Find -->
+    <string name="find_value_title">나의 가치관은?</string>
+    <string name="find_opponent_title">상대의 성향은?</string>
+    <string name="find_empty">설정해두신 가치관이 없어요!\n가치관 필터로 맞는 상대를 찾아보아요!</string>
+    <string name="find_value">가치관 문답하러가기</string>
+    <string name="find_complementary">나와\n 다르기에 매력적인\n사람을 찾아요!\n(상호보완성)</string>
+    <string name="find_similarity">나와\n닮은 점이\n많은 사람을 원해요!\n(상호 유사성)</string>
+    <string name="find_bang">FIND!</string>
+
 </resources>
