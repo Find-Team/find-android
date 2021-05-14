@@ -2,10 +2,12 @@
     <color name="black">#000000</color>
     <color name="black_33">#333333</color>
     <color name="gray_bd">#bdbdbd</color>
+    <color name="gray_e0">#e0e0e0</color>
     <color name="white">#ffffff</color>
     <color name="purple_7d5fff">#7d5fff</color>
     <color name="purple_9980fa">#9980fa</color>
     <color name="purple_e7e1ff">#e7e1ff</color>
     <color name="mint_81ec">#81ecec</color>
+    <color name="mint_81ec_0.15">#2681ecec</color>
     <color name="red_ff7675">#ff7675</color>
 </resources>
