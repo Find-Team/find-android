@@ -24,20 +24,11 @@
         android:id="@+id/tab_scan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/border_bottom_gray_bd_fill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_scan_title">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan_tab_find" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan_tab_found" />
-    </com.google.android.material.tabs.TabLayout>
+        app:layout_constraintTop_toBottomOf="@id/tv_scan_title"
+        app:tabIndicatorHeight="3dp" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_scan"
