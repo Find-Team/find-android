@@ -24,11 +24,12 @@
         android:id="@+id/tab_scan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_bottom_gray_bd_fill"
+        android:background="@drawable/border_bottom_3_gray_bd_fill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_scan_title"
-        app:tabIndicatorHeight="3dp" />
+        app:tabIndicatorHeight="3dp"
+        app:tabTextColor="@color/gray_bd" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_scan"

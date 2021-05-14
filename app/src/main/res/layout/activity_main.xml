@@ -19,7 +19,7 @@
         android:id="@+id/bottom_navigation_view_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:color="@color/white"
+        android:background="@drawable/border_top_1_gray_bd_fill"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
