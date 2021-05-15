@@ -18,17 +18,19 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_scan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_bottom_3_gray_bd_fill"
+        android:background="@drawable/border_bottom_3_gray_bd_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_scan_title"
         app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@color/purple_7d5fff"
         app:tabTextColor="@color/gray_bd" />
 
     <find.ui.util.NestedScrollableHost
