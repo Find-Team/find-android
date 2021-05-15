@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".ui.question.QuestionFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="64dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_question_prev"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/border_gray_fill_round_10"
+        android:paddingVertical="12dp"
+        android:text="@string/question_prev"
+        android:textColor="@color/gray_bd"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@id/rv_question"
+        app:layout_constraintTop_toBottomOf="@id/rv_question"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_question_next"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/border_white_fill_round_10"
+        android:paddingVertical="12dp"
+        android:text="@string/question_next"
+        android:textColor="@color/black_33"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="@id/rv_question"
+        app:layout_constraintTop_toTopOf="@id/btn_question_prev"
+        tools:ignore="SpUsage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

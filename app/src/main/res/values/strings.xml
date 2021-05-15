@@ -36,6 +36,10 @@
     <string name="value_family">가족</string>
     <string name="value_career">커리어</string>
 
+    <!-- Question -->
+    <string name="question_prev">이전</string>
+    <string name="question_next">다음</string>
+
     <!-- AnyWhere -->
     <string name="complete">완료</string>
 </resources>
