@@ -25,4 +25,8 @@
     <string name="find_similarity">나와\n닮은 점이\n많은 사람을 원해요!\n(상호 유사성)</string>
     <string name="find_bang">FIND!</string>
 
+    <!-- Create Profile -->
+    <string name="create_profile_title">프로필 작성</string>
+    <string name="create_profile_complete">완료</string>
+
 </resources>
