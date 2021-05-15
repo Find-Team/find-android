@@ -12,6 +12,8 @@
 
     <!-- Create Profile -->
     <string name="create_profile_title">프로필 작성</string>
+    <string name="create_profile_guide">프로필을 작성해주세요!</string>
+    <string name="create_profile_button">프로필 작성하러 가기</string>
 
     <!-- Scan -->
     <string name="scan_title">상대 찾기</string>
