@@ -1,4 +1,4 @@
-package find.ui.find
+package find.ui.ui.find
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

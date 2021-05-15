@@ -7,14 +7,14 @@
 
         <variable
             name="findViewModel"
-            type="find.ui.find.FindViewModel" />
+            type="find.ui.ui.find.FindViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        tools:context=".find.FindFragment">
+        tools:context=".ui.find.FindFragment">
 
         <TextView
             android:id="@+id/tv_find_value_title"

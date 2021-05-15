@@ -1,4 +1,4 @@
-package find.ui.main
+package find.ui.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,10 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import find.ui.R
 import find.ui.databinding.ActivityMainBinding
-import find.ui.matching.MatchingFragment
-import find.ui.mypage.MyPageFragment
-import find.ui.reserve.ReserveFragment
-import find.ui.scan.ScanFragment
+import find.ui.ui.matching.MatchingFragment
+import find.ui.ui.mypage.MyPageFragment
+import find.ui.ui.reserve.ReserveFragment
+import find.ui.ui.scan.ScanFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

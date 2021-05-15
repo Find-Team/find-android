@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="find.CreateProfileActivity">
+        tools:context=".ui.profile.CreateProfileActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_cp_top_menu"
