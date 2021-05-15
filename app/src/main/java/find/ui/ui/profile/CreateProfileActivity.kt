@@ -1,7 +1,7 @@
-package find
+package find.ui.ui.profile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import find.ui.R
 
 class CreateProfileActivity : AppCompatActivity() {

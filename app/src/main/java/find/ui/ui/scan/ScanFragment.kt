@@ -1,4 +1,4 @@
-package find.ui.scan
+package find.ui.ui.scan
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import find.ui.R
 import find.ui.databinding.FragmentScanBinding
-import find.ui.find.FindFragment
-import find.ui.found.FoundFragment
+import find.ui.ui.find.FindFragment
+import find.ui.ui.found.FoundFragment
 
 class ScanFragment : Fragment() {
     private var _binding: FragmentScanBinding? = null

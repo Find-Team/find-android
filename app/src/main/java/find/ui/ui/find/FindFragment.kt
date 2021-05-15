@@ -1,4 +1,4 @@
-package find.ui.find
+package find.ui.ui.find
 
 import android.os.Bundle
 import android.view.LayoutInflater
