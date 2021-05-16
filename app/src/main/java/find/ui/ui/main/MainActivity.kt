@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initViewPager()
-        initBottomNavigationView()
+        initMainViewPager()
+        initMainBottomNavigationView()
     }
 
-    private fun initViewPager() {
+    private fun initMainViewPager() {
         binding.vpMain.apply {
             adapter = object : FragmentStateAdapter(this@MainActivity) {
                 override fun getItemCount() = 4
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initBottomNavigationView() {
+    private fun initMainBottomNavigationView() {
         binding.bottomNavigationViewMain.apply {
             itemIconTintList = null
             setOnNavigationItemSelectedListener {

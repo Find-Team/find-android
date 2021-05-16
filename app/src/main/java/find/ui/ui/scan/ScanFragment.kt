@@ -23,7 +23,7 @@ class ScanFragment : Fragment() {
     ): View {
         binding = FragmentScanBinding.inflate(inflater, container, false)
         initScanViewPager()
-        initTabLayout()
+        initScanTabLayout()
         return binding.root
     }
 
@@ -40,7 +40,7 @@ class ScanFragment : Fragment() {
         }
     }
 
-    private fun initTabLayout() {
+    private fun initScanTabLayout() {
         TabLayoutMediator(binding.tabScan, binding.vpScan) { tab, position ->
             when (position) {
                 0 -> tab.text = getString(R.string.scan_tab_find)
