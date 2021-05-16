@@ -1,3 +1,18 @@
+/*
+ * Copyright 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package find.ui.util
 
 import android.content.Context
@@ -11,6 +26,14 @@ import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
 import kotlin.math.absoluteValue
 import kotlin.math.sign
 
+/**
+ * Layout to wrap a scrollable component inside a ViewPager2. Provided as a solution to the problem
+ * where pages of ViewPager2 have nested scrollable elements that scroll in the same direction as
+ * ViewPager2. The scrollable element needs to be the immediate and only child of this host layout.
+ *
+ * This solution has limitations when using multiple levels of nested scrollable elements
+ * (e.g. a horizontal RecyclerView in a vertical RecyclerView in a horizontal ViewPager2).
+ */
 class NestedScrollableHost : FrameLayout {
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)

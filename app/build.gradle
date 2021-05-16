@@ -51,6 +51,10 @@ dependencies {
 
     // Fragment KTX
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
     // Circle ImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
