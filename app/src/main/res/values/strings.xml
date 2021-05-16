@@ -43,6 +43,13 @@
     <string name="profile_info_mbti">MBTI</string>
     <string name="profile_info_edu">학력</string>
 
+    <!-- Profile Info Dialog -->
+    <string name="dialog_info_ok">확인</string>
+    <string name="dialog_info_enter">입력해주세요</string>
+    <string name="dialog_info_limit">최대 8글자입니다.</string>
+    <string name="dialog_info_job">직업을 적어주세요</string>
+    <string name="dialog_info_office">직장을 적어주세요</string>
+
     <!-- Scan -->
     <string name="scan_title">상대 찾기</string>
     <string name="scan_tab_find">FIND</string>
