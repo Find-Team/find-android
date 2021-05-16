@@ -199,7 +199,7 @@
                     android:layout_marginTop="24dp"
                     android:background="@drawable/border_white_fill_round_10"
                     android:backgroundTint="@color/gray_f2"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/title_cp_identity"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -224,6 +224,98 @@
 
                 </RelativeLayout>
 
+                <TextView
+                    android:id="@+id/title_cp_identity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:text="@string/profile_identity_title"
+                    android:textColor="@color/black_33"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_image_prev"
+                    tools:ignore="SpUsage" />
+
+                <ImageButton
+                    android:id="@+id/btn_cp_identity_help"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_profile_identity_help"
+                    app:layout_constraintBottom_toBottomOf="@id/title_cp_identity"
+                    app:layout_constraintStart_toEndOf="@id/title_cp_identity"
+                    app:layout_constraintTop_toTopOf="@id/title_cp_identity"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_cp_identity"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/border_purple99_line_purple7d_round_10"
+                    android:minHeight="0dp"
+                    android:paddingVertical="15dp"
+                    android:text="@string/profile_identity_go"
+                    android:textColor="@color/purple_7d5fff"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_cp_image_guide"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/title_cp_identity"
+                    tools:ignore="SpUsage" />
+
+                <ImageView
+                    android:id="@+id/img_cp_identity_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="17dp"
+                    android:src="@drawable/ic_profile_identity_check"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_cp_identity"
+                    app:layout_constraintEnd_toEndOf="@id/btn_cp_identity"
+                    app:layout_constraintTop_toTopOf="@id/btn_cp_identity"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/title_cp_introduction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:text="@string/profile_introduction_title"
+                    android:textColor="@color/black_33"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/btn_cp_identity"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/tv_cp_introduction_explain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/profile_introduction_explain"
+                    android:textColor="@color/purple_7d5fff"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/title_cp_introduction"
+                    tools:ignore="SpUsage" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_cp_introduction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:background="@drawable/border_purple99_line_purple7d_round_10"
+                    android:minHeight="0dp"
+                    android:paddingVertical="15dp"
+                    android:text="@string/profile_introduction_go"
+                    android:textColor="@color/purple_7d5fff"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_cp_image_guide"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cp_introduction_explain"
+                    tools:ignore="SpUsage" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>

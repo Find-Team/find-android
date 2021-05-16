@@ -18,6 +18,11 @@
     <string name="profile_image_title">프로필 사진</string>
     <string name="profile_image_explain">프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)</string>
     <string name="profile_image_prev">프로필 사진\n미리보기</string>
+    <string name="profile_identity_title">본인 인증</string>
+    <string name="profile_identity_go">인증하러 가기</string>
+    <string name="profile_introduction_go">소개글 작성하러 가기</string>
+    <string name="profile_introduction_explain">당신을 소개해주세요! (최소 30자)</string>
+    <string name="profile_introduction_title">소개글</string>
 
     <!-- Scan -->
     <string name="scan_title">상대 찾기</string>
