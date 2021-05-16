@@ -4,7 +4,7 @@
     <style name="layout_profile_account">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">13dp</item>
+        <item name="android:layout_marginTop">12dp</item>
         <item name="android:background">@drawable/border_white_fill_round_10</item>
         <item name="android:backgroundTint">@color/gray_f2</item>
         <item name="android:paddingStart">20dp</item>
@@ -12,11 +12,23 @@
         <item name="android:paddingBottom">16dp</item>
     </style>
 
-    <style name="tv_profile_account">
-        <item name="android:layout_width">wrap_content</item>
+    <style name="tv_profile_info">
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/black_33</item>
         <item name="android:textSize" tools:ignore="SpUsage">13dp</item>
+    </style>
+
+    <style name="profile_info_content" parent="tv_profile_info">
+        <item name="android:textColor">@color/gray_4f</item>
+    </style>
+
+    <style name="profile_info_title" parent="tv_profile_info">
+        <item name="android:textColor">@color/black_33</item>
+    </style>
+
+    <style name="profile_info_default" parent="tv_profile_info">
+        <item name="android:text">@string/profile_info_select</item>
+        <item name="android:textColor">@color/gray_bd</item>
     </style>
 
     <style name="profile_title">
