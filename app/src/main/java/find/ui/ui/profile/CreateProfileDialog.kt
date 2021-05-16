@@ -7,7 +7,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.InsetDrawable
 import android.view.LayoutInflater
-import android.widget.Button
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import find.ui.R
@@ -25,13 +24,13 @@ class CreateProfileDialog(private val context: Context) {
         dialog.setCancelable(false)
         dialog.setContentView(dialogBinding.root)
 
-        goToProfile(dialogBinding.btnCpGoProfile)
+        goToProfile()
 
         dialog.show()
     }
 
-    private fun goToProfile(profileBtn: Button) {
-        profileBtn.setOnClickListener {
+    private fun goToProfile() {
+        dialogBinding.btnCpGoProfile.setOnClickListener {
             dialog.dismiss()
             val intent = Intent(context, CreateProfileActivity::class.java)
             context.startActivity(intent)
