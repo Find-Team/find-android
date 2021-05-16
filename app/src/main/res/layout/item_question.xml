@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_white_fill_round_10">
+
+    <TextView
+        android:id="@+id/tv_question_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/border_white_fill_round_14"
+        android:backgroundTint="@color/purple_e7e1ff"
+        android:paddingHorizontal="17dp"
+        android:paddingVertical="5dp"
+        android:text="관계"
+        android:textColor="@color/black_33"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/tv_question_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:lineSpacingExtra="12sp"
+        android:text="연인관계를 주변에 알리는 것에 대해\n어떻게 생각하세요?"
+        android:textColor="@color/black_33"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@id/tv_question_item_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_question_item_title"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_answer_one"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/border_purple_line_round_25"
+        android:paddingHorizontal="15dp"
+        android:text="관계가 깊어지기 전까지는 금물"
+        android:textColor="@color/purple_7d5fff"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@id/tv_question_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_question_title"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_answer_two"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/border_gray_line_round_25"
+        android:paddingHorizontal="15dp"
+        android:text="가까운 사람에게만"
+        android:textColor="@color/gray_4f"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@id/tv_question_title"
+        app:layout_constraintTop_toBottomOf="@id/btn_answer_one"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_answer_three"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/border_gray_line_round_25"
+        android:paddingHorizontal="15dp"
+        android:text="당당하게 행동"
+        android:textColor="@color/gray_4f"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@id/tv_question_title"
+        app:layout_constraintTop_toBottomOf="@id/btn_answer_two"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="11dp"
+        android:text="1/10"
+        android:textColor="@color/black_33"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_answer_three"
+        tools:ignore="SpUsage" />
+</androidx.constraintlayout.widget.ConstraintLayout>
