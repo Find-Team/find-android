@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import find.ui.databinding.FragmentFindBinding
 import find.ui.ui.values.ValuesActivity
+import find.ui.util.autoCleared
 
 class FindFragment : Fragment() {
-    private var _binding: FragmentFindBinding? = null
-    private val binding get() = _binding!!
+    private var binding by autoCleared<FragmentFindBinding>()
     private val findViewModel by activityViewModels<FindViewModel>()
 
     override fun onCreateView(
@@ -20,16 +20,11 @@ class FindFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFindBinding.inflate(inflater, container, false)
+        binding = FragmentFindBinding.inflate(inflater, container, false)
         binding.findViewModel = findViewModel
         binding.lifecycleOwner = this@FindFragment
         startValuesActivity()
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun startValuesActivity() {
