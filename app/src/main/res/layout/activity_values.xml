@@ -53,21 +53,14 @@
         app:layout_constraintTop_toBottomOf="@id/tv_values_title"
         app:tabIndicatorHeight="2dp"
         app:tabSelectedTextColor="@color/purple_7d5fff"
-        app:tabTextColor="@color/gray_bd">
+        app:tabTextColor="@color/gray_bd" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/value_relationship" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/value_family" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/value_career" />
-    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_values"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_values" />
 </androidx.constraintlayout.widget.ConstraintLayout>
