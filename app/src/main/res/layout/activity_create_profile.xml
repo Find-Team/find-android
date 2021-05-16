@@ -67,28 +67,20 @@
 
                 <TextView
                     android:id="@+id/title_cp_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/profile_title"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="22dp"
                     android:text="@string/profile_image_title"
-                    android:textColor="@color/black_33"
-                    android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpUsage" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_cp_image_explain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/profile_explain"
                     android:layout_marginTop="7dp"
                     android:text="@string/profile_image_explain"
-                    android:textColor="@color/purple_7d5fff"
-                    android:textSize="12dp"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
-                    app:layout_constraintTop_toBottomOf="@id/title_cp_image"
-                    tools:ignore="SpUsage" />
+                    app:layout_constraintTop_toBottomOf="@id/title_cp_image" />
 
                 <TextView
                     android:id="@+id/tv_cp_image_guide"
@@ -226,15 +218,11 @@
 
                 <TextView
                     android:id="@+id/title_cp_identity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/profile_title"
                     android:layout_marginTop="34dp"
                     android:text="@string/profile_identity_title"
-                    android:textColor="@color/black_33"
-                    android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
-                    app:layout_constraintTop_toBottomOf="@id/layout_cp_image_prev"
-                    tools:ignore="SpUsage" />
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_image_prev" />
 
                 <ImageButton
                     android:id="@+id/btn_cp_identity_help"
@@ -279,27 +267,19 @@
 
                 <TextView
                     android:id="@+id/title_cp_introduction"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/profile_title"
                     android:layout_marginTop="36dp"
                     android:text="@string/profile_introduction_title"
-                    android:textColor="@color/black_33"
-                    android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
-                    app:layout_constraintTop_toBottomOf="@id/btn_cp_identity"
-                    tools:ignore="SpUsage" />
+                    app:layout_constraintTop_toBottomOf="@id/btn_cp_identity" />
 
                 <TextView
                     android:id="@+id/tv_cp_introduction_explain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/profile_explain"
                     android:layout_marginTop="8dp"
                     android:text="@string/profile_introduction_explain"
-                    android:textColor="@color/purple_7d5fff"
-                    android:textSize="12dp"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
-                    app:layout_constraintTop_toBottomOf="@id/title_cp_introduction"
-                    tools:ignore="SpUsage" />
+                    app:layout_constraintTop_toBottomOf="@id/title_cp_introduction" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_cp_introduction"
@@ -319,70 +299,48 @@
 
                 <TextView
                     android:id="@+id/title_cp_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/profile_title"
                     android:layout_marginTop="42dp"
                     android:text="@string/profile_account_title"
-                    android:textColor="@color/black_33"
-                    android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
-                    app:layout_constraintTop_toBottomOf="@id/btn_cp_introduction"
-                    tools:ignore="SpUsage" />
+                    app:layout_constraintTop_toBottomOf="@id/btn_cp_introduction" />
 
                 <TextView
                     android:id="@+id/tv_cp_account_explain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/profile_explain"
                     android:layout_marginTop="8dp"
                     android:text="@string/profile_account_explain"
-                    android:textColor="@color/purple_7d5fff"
-                    android:textSize="12dp"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
-                    app:layout_constraintTop_toBottomOf="@id/title_cp_account"
-                    tools:ignore="SpUsage" />
+                    app:layout_constraintTop_toBottomOf="@id/title_cp_account" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_account_nickname"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    style="@style/layout_profile_account"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="13dp"
-                    android:background="@drawable/border_white_fill_round_10"
-                    android:backgroundTint="@color/gray_f2"
-                    android:paddingVertical="17dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="14dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_cp_account_explain">
 
                     <TextView
                         android:id="@+id/title_cp_account_nickname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:text="@string/profile_account_nickname"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_nickname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:layout_marginStart="131dp"
                         android:text="송이송이"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/title_cp_account_nickname"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_nickname" />
 
                     <ImageView
                         android:id="@+id/img_account_nickname_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="14dp"
                         android:src="@drawable/ic_circle_check"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/title_cp_account_nickname"
@@ -392,45 +350,31 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_account_birth"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="13dp"
-                    android:background="@drawable/border_white_fill_round_10"
-                    android:backgroundTint="@color/gray_f2"
-                    android:paddingVertical="17dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="14dp"
+                    style="@style/layout_profile_account"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_account_nickname">
 
                     <TextView
                         android:id="@+id/title_cp_account_birth"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:text="@string/profile_account_birth"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_birth"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:layout_marginStart="131dp"
                         android:text="1998.11.09"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/title_cp_account_birth"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_birth" />
 
                     <ImageView
                         android:id="@+id/img_account_birth_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="14dp"
                         android:src="@drawable/ic_circle_check"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/title_cp_account_birth"
@@ -441,45 +385,32 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_account_gender"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="13dp"
-                    android:background="@drawable/border_white_fill_round_10"
-                    android:backgroundTint="@color/gray_f2"
+                    style="@style/layout_profile_account"
                     android:paddingVertical="17dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="14dp"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_account_birth">
 
                     <TextView
                         android:id="@+id/title_cp_account_gender"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:text="@string/profile_account_gender"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_gender"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:layout_marginStart="131dp"
                         android:text="여자"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/title_cp_account_gender"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_gender" />
 
                     <ImageView
                         android:id="@+id/img_account_gender_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="14dp"
                         android:src="@drawable/ic_circle_check"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/title_cp_account_gender"
@@ -490,45 +421,32 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_account_place"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="13dp"
-                    android:background="@drawable/border_white_fill_round_10"
-                    android:backgroundTint="@color/gray_f2"
+                    style="@style/layout_profile_account"
                     android:paddingVertical="17dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="14dp"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_account_gender">
 
                     <TextView
                         android:id="@+id/title_cp_account_place"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:text="@string/profile_account_place"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_place"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/tv_profile_account"
                         android:layout_marginStart="131dp"
                         android:text="서울 중랑구"
-                        android:textColor="@color/black_33"
-                        android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/title_cp_account_place"
-                        tools:ignore="SpUsage" />
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_place" />
 
                     <ImageView
                         android:id="@+id/img_account_place_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="14dp"
                         android:src="@drawable/ic_circle_check"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/title_cp_account_place"
