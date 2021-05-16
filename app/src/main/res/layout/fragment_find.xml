@@ -44,13 +44,14 @@
             app:layout_constraintTop_toBottomOf="@id/tv_find_value_title"
             tools:ignore="SpUsage" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_find_value"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/border_purple_fill_round_40"
+            android:background="@drawable/border_white_fill_round_40"
+            android:backgroundTint="@color/purple_9980fa"
             android:paddingHorizontal="44dp"
             android:text="@string/find_value"
             android:textColor="@color/white"
@@ -118,7 +119,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="20dp"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{() -> findViewModel.selectComplementary()}"
                 android:paddingHorizontal="30dp"
@@ -127,7 +127,6 @@
                 android:textColor="@color/black_33"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_find_similarity"
-                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toEndOf="@id/btn_find_similarity"
                 app:layout_constraintTop_toTopOf="@id/btn_find_similarity"
                 tools:ignore="SpUsage" />
@@ -143,7 +142,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="30dp"
-            android:layout_weight="1"
+            android:background="@drawable/border_white_fill_round_25"
             android:gravity="center"
             android:text="@string/find_bang"
             android:textColor="@color/white"

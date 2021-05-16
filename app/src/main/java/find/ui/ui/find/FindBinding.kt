@@ -23,10 +23,10 @@ object FindBinding {
     fun isButtonActive(button: Button, isSimilarity: Boolean, isComplementary: Boolean) {
         when {
             isSimilarity || isComplementary -> {
-                button.setBackgroundResource(R.drawable.border_mint_fill_round_25)
+                button.backgroundTintList = button.context.getColorStateList(R.color.mint_81ec)
             }
             else -> {
-                button.setBackgroundResource(R.drawable.border_gray_fill_round_25)
+                button.backgroundTintList = button.context.getColorStateList(R.color.gray_e0)
             }
         }
     }
