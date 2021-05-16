@@ -14,6 +14,10 @@
     <string name="create_profile_title">프로필 작성</string>
     <string name="create_profile_guide">프로필을 작성해주세요!</string>
     <string name="create_profile_button">프로필 작성하러 가기</string>
+    <string name="profile_image_guide"><u>프로필 가이드</u></string>
+    <string name="profile_image_title">프로필 사진</string>
+    <string name="profile_image_explain">프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)</string>
+    <string name="profile_image_prev">프로필 사진\n미리보기</string>
 
     <!-- Scan -->
     <string name="scan_title">상대 찾기</string>
@@ -42,4 +46,5 @@
 
     <!-- AnyWhere -->
     <string name="complete">완료</string>
+
 </resources>
