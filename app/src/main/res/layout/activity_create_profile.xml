@@ -323,14 +323,14 @@
 
                     <TextView
                         android:id="@+id/title_cp_account_nickname"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_title"
                         android:text="@string/profile_account_nickname"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_nickname"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_content"
                         android:layout_marginStart="131dp"
                         android:text="송이송이"
                         app:layout_constraintStart_toStartOf="parent"
@@ -357,14 +357,14 @@
 
                     <TextView
                         android:id="@+id/title_cp_account_birth"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_title"
                         android:text="@string/profile_account_birth"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_birth"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_content"
                         android:layout_marginStart="131dp"
                         android:text="1998.11.09"
                         app:layout_constraintStart_toStartOf="parent"
@@ -386,21 +386,20 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_account_gender"
                     style="@style/layout_profile_account"
-                    android:paddingVertical="17dp"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_account_birth">
 
                     <TextView
                         android:id="@+id/title_cp_account_gender"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_title"
                         android:text="@string/profile_account_gender"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_gender"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_content"
                         android:layout_marginStart="131dp"
                         android:text="여자"
                         app:layout_constraintStart_toStartOf="parent"
@@ -422,21 +421,20 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_account_place"
                     style="@style/layout_profile_account"
-                    android:paddingVertical="17dp"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_account_gender">
 
                     <TextView
                         android:id="@+id/title_cp_account_place"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_title"
                         android:text="@string/profile_account_place"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_cp_account_place"
-                        style="@style/tv_profile_account"
+                        style="@style/profile_info_content"
                         android:layout_marginStart="131dp"
                         android:text="서울 중랑구"
                         app:layout_constraintStart_toStartOf="parent"
@@ -452,6 +450,284 @@
                         app:layout_constraintTop_toTopOf="@id/title_cp_account_place"
                         app:tint="@color/purple_9980fa"
                         tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/title_profile_info"
+                    style="@style/profile_title"
+                    android:layout_marginTop="36dp"
+                    android:text="@string/profile_info_title"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_account_place" />
+
+                <TextView
+                    android:id="@+id/tv_cp_info_explain"
+                    style="@style/profile_explain"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/profile_info_explain"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/title_profile_info" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_job"
+                    style="@style/layout_profile_account"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintEnd_toStartOf="@id/layout_cp_info_office"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cp_info_explain">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_job"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_job"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_job"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_job"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_job" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_office"
+                    style="@style/layout_profile_account"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_cp_info_job"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cp_info_explain">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_office"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_office"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_office"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_office"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_office" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_edu"
+                    style="@style/layout_profile_account"
+                    app:layout_constraintEnd_toStartOf="@id/layout_cp_info_mbti"
+                    app:layout_constraintStart_toStartOf="@id/layout_cp_info_job"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_job">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_edu"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_edu"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_edu"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_edu"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_edu" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_mbti"
+                    style="@style/layout_profile_account"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
+                    app:layout_constraintStart_toEndOf="@id/layout_cp_info_edu"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_office">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_mbti"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_mbti"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_mbti"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_mbti"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_mbti" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_tall"
+                    style="@style/layout_profile_account"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_info_job"
+                    app:layout_constraintStart_toStartOf="@id/layout_cp_info_edu"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_edu">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_tall"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_tall"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_tall"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="46dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_tall"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_tall" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_form"
+                    style="@style/layout_profile_account"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
+                    app:layout_constraintStart_toEndOf="@id/layout_cp_info_tall"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_mbti">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_form"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_form"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_form"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_form"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_form" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_smoke"
+                    style="@style/layout_profile_account"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_info_job"
+                    app:layout_constraintStart_toStartOf="@id/layout_cp_info_edu"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_tall">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_smoke"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_smoke"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_smoke"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_smoke"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_smoke" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_religion"
+                    style="@style/layout_profile_account"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
+                    app:layout_constraintStart_toEndOf="@id/layout_cp_info_tall"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_form">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_religion"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_religion"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_religion"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_religion"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_religion" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_married"
+                    style="@style/layout_profile_account"
+                    android:layout_marginBottom="103dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_info_job"
+                    app:layout_constraintStart_toStartOf="@id/layout_cp_info_edu"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_smoke">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_married"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_married"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_married"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_married"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_married" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_info_drink"
+                    style="@style/layout_profile_account"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="103dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
+                    app:layout_constraintStart_toEndOf="@id/layout_cp_info_tall"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_info_religion">
+
+                    <TextView
+                        android:id="@+id/title_cp_info_drink"
+                        style="@style/profile_info_title"
+                        android:text="@string/profile_info_drink"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_info_drink"
+                        style="@style/profile_info_default"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/title_cp_info_drink"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_info_drink"
+                        tools:ignore="TooManyViews" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
