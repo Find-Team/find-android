@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:src="@drawable/ic_my_page_check_identity"
+            android:src="@drawable/ic_circle_check"
             app:layout_constraintBottom_toBottomOf="@id/tv_my_page_nickname"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_my_page_nickname"

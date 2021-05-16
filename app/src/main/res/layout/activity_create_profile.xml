@@ -316,6 +316,227 @@
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
                     app:layout_constraintTop_toBottomOf="@id/tv_cp_introduction_explain"
                     tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/title_cp_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42dp"
+                    android:text="@string/profile_account_title"
+                    android:textColor="@color/black_33"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/btn_cp_introduction"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/tv_cp_account_explain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/profile_account_explain"
+                    android:textColor="@color/purple_7d5fff"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@id/title_cp_image"
+                    app:layout_constraintTop_toBottomOf="@id/title_cp_account"
+                    tools:ignore="SpUsage" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_account_nickname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/border_white_fill_round_10"
+                    android:backgroundTint="@color/gray_f2"
+                    android:paddingVertical="17dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cp_account_explain">
+
+                    <TextView
+                        android:id="@+id/title_cp_account_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_account_nickname"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_account_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="131dp"
+                        android:text="송이송이"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_nickname"
+                        tools:ignore="SpUsage" />
+
+                    <ImageView
+                        android:id="@+id/img_account_nickname_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_circle_check"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_nickname"
+                        app:tint="@color/purple_9980fa"
+                        tools:ignore="ContentDescription" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_account_birth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/border_white_fill_round_10"
+                    android:backgroundTint="@color/gray_f2"
+                    android:paddingVertical="17dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
+                    app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_account_nickname">
+
+                    <TextView
+                        android:id="@+id/title_cp_account_birth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_account_birth"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_account_birth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="131dp"
+                        android:text="1998.11.09"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_birth"
+                        tools:ignore="SpUsage" />
+
+                    <ImageView
+                        android:id="@+id/img_account_birth_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_circle_check"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_birth"
+                        app:tint="@color/purple_9980fa"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_account_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/border_white_fill_round_10"
+                    android:backgroundTint="@color/gray_f2"
+                    android:paddingVertical="17dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
+                    app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_account_birth">
+
+                    <TextView
+                        android:id="@+id/title_cp_account_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_account_gender"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_account_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="131dp"
+                        android:text="여자"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_gender"
+                        tools:ignore="SpUsage" />
+
+                    <ImageView
+                        android:id="@+id/img_account_gender_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_circle_check"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_gender"
+                        app:tint="@color/purple_9980fa"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_cp_account_place"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/border_white_fill_round_10"
+                    android:backgroundTint="@color/gray_f2"
+                    android:paddingVertical="17dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/layout_cp_account_nickname"
+                    app:layout_constraintStart_toStartOf="@id/layout_cp_account_nickname"
+                    app:layout_constraintTop_toBottomOf="@id/layout_cp_account_gender">
+
+                    <TextView
+                        android:id="@+id/title_cp_account_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_account_place"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tv_cp_account_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="131dp"
+                        android:text="서울 중랑구"
+                        android:textColor="@color/black_33"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_place"
+                        tools:ignore="SpUsage" />
+
+                    <ImageView
+                        android:id="@+id/img_account_place_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_circle_check"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/title_cp_account_place"
+                        app:tint="@color/purple_9980fa"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>

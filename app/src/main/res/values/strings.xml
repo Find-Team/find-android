@@ -23,6 +23,12 @@
     <string name="profile_introduction_go">소개글 작성하러 가기</string>
     <string name="profile_introduction_explain">당신을 소개해주세요! (최소 30자)</string>
     <string name="profile_introduction_title">소개글</string>
+    <string name="profile_account_title">계정 정보</string>
+    <string name="profile_account_explain">가입시 기재된 정보로 변경이 불가합니다.</string>
+    <string name="profile_account_nickname">닉네임</string>
+    <string name="profile_account_place">지역</string>
+    <string name="profile_account_gender">성별</string>
+    <string name="profile_account_birth">생년월일</string>
 
     <!-- Scan -->
     <string name="scan_title">상대 찾기</string>
