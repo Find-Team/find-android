@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="infoDialog"
+            type="find.ui.ui.profile.InfoDialogFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -36,14 +43,16 @@
 
         <EditText
             android:id="@+id/et_info_dialog"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="49dp"
             android:background="@android:color/transparent"
+            android:gravity="center"
             android:hint="@string/dialog_info_enter"
             android:importantForAutofill="no"
             android:inputType="text"
             android:maxLength="8"
+            android:text="@={infoDialog.textInputInfo}"
             android:textColor="@color/black"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +63,7 @@
         <ImageView
             android:id="@+id/img_info_dialog_divide"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
             android:layout_marginTop="11dp"
             android:background="@drawable/border_top_1_gray_bd_fill"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +88,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_info_dialog_divide"
             tools:ignore="SpUsage" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
