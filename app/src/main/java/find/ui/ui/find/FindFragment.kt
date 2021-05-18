@@ -23,13 +23,23 @@ class FindFragment : Fragment() {
         binding = FragmentFindBinding.inflate(inflater, container, false)
         binding.findViewModel = findViewModel
         binding.lifecycleOwner = this@FindFragment
-        startValuesActivity()
+        startQuestionFragment()
+        startSelectFragment()
         return binding.root
     }
 
-    private fun startValuesActivity() {
+    private fun startQuestionFragment() {
         binding.btnFindValue.setOnClickListener {
             val intent = Intent(requireContext(), ValuesActivity::class.java)
+            intent.putExtra("values", "question")
+            startActivity(intent)
+        }
+    }
+
+    private fun startSelectFragment() {
+        binding.tvFindValueSelect.setOnClickListener {
+            val intent = Intent(requireContext(), ValuesActivity::class.java)
+            intent.putExtra("values", "select")
             startActivity(intent)
         }
     }
