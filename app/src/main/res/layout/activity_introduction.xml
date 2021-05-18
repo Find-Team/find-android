@@ -83,7 +83,6 @@
 
         <EditText
             android:id="@+id/et_intro_write"
-            textChangedListener="@{profileViewModel.watcher}"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
@@ -96,9 +95,9 @@
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:maxLength="500"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="24dp"
+            android:paddingHorizontal="26dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="44dp"
             android:text="@={profileViewModel.introContent}"
             android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -110,6 +109,7 @@
         <TextView
             android:id="@+id/tv_intro_limit"
             changeColor="@{profileViewModel.introContent}"
+            setTextLength="@{profileViewModel.introContent}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
