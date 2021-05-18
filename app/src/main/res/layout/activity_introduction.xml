@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.profile.IntroductionActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_intro_top_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_intro_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/title_intro_write"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_intro_title"
+                android:textColor="@color/black_33"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_intro_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:text="@string/save"
+                android:textColor="@color/black_33"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/title_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/profile_introduction_title"
+            android:textColor="@color/black_33"
+            android:textSize="22dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_intro_top_menu"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_intro_explain"
+            style="@style/wrap_purple7d_12"
+            android:layout_marginTop="6dp"
+            android:text="@string/profile_intro_explain"
+            app:layout_constraintStart_toStartOf="@id/title_intro"
+            app:layout_constraintTop_toBottomOf="@id/title_intro" />
+
+        <EditText
+            android:id="@+id/et_intro_write"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="139dp"
+            android:background="@drawable/border_white_fill_round_10"
+            android:backgroundTint="@color/gray_f2"
+            android:gravity="left"
+            android:hint="@string/profile_intro_edit"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/title_intro"
+            app:layout_constraintTop_toBottomOf="@id/tv_intro_explain"
+            tools:ignore="RtlHardcoded,SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_intro_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="156dp"
+            android:text="0/500"
+            android:textColor="@color/gray_bd"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpUsage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
