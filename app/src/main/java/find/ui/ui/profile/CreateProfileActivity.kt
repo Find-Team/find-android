@@ -1,5 +1,6 @@
 package find.ui.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -44,6 +45,11 @@ class CreateProfileActivity : AppCompatActivity(), InfoDialogFragment.InfoDialog
                 setTextStyle(binding.tvCpInfoOffice, content)
             }
         }
+    }
+
+    fun goToIntroduction() {
+        val intent = Intent(this, IntroductionActivity::class.java)
+        startActivity(intent)
     }
 
     private fun setTextStyle(textView: TextView, content: String) {
