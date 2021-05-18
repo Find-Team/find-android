@@ -74,7 +74,7 @@
 
                 <TextView
                     android:id="@+id/title_cp_image"
-                    style="@style/profile_title"
+                    style="@style/wrap_black33_20"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="22dp"
                     android:text="@string/profile_image_title"
@@ -83,7 +83,7 @@
 
                 <TextView
                     android:id="@+id/tv_cp_image_explain"
-                    style="@style/profile_explain"
+                    style="@style/wrap_purple7d_12"
                     android:layout_marginTop="7dp"
                     android:text="@string/profile_image_explain"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
@@ -225,7 +225,7 @@
 
                 <TextView
                     android:id="@+id/title_cp_identity"
-                    style="@style/profile_title"
+                    style="@style/wrap_black33_20"
                     android:layout_marginTop="34dp"
                     android:text="@string/profile_identity_title"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
@@ -274,7 +274,7 @@
 
                 <TextView
                     android:id="@+id/title_cp_introduction"
-                    style="@style/profile_title"
+                    style="@style/wrap_black33_20"
                     android:layout_marginTop="36dp"
                     android:text="@string/profile_introduction_title"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
@@ -282,7 +282,7 @@
 
                 <TextView
                     android:id="@+id/tv_cp_introduction_explain"
-                    style="@style/profile_explain"
+                    style="@style/wrap_purple7d_12"
                     android:layout_marginTop="8dp"
                     android:text="@string/profile_introduction_explain"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
@@ -306,7 +306,7 @@
 
                 <TextView
                     android:id="@+id/title_cp_account"
-                    style="@style/profile_title"
+                    style="@style/wrap_black33_20"
                     android:layout_marginTop="42dp"
                     android:text="@string/profile_account_title"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
@@ -314,7 +314,7 @@
 
                 <TextView
                     android:id="@+id/tv_cp_account_explain"
-                    style="@style/profile_explain"
+                    style="@style/wrap_purple7d_12"
                     android:layout_marginTop="8dp"
                     android:text="@string/profile_account_explain"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
@@ -462,7 +462,7 @@
 
                 <TextView
                     android:id="@+id/title_profile_info"
-                    style="@style/profile_title"
+                    style="@style/wrap_black33_20"
                     android:layout_marginTop="36dp"
                     android:text="@string/profile_info_title"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"
@@ -470,7 +470,7 @@
 
                 <TextView
                     android:id="@+id/tv_cp_info_explain"
-                    style="@style/profile_explain"
+                    style="@style/wrap_purple7d_12"
                     android:layout_marginTop="8dp"
                     android:text="@string/profile_info_explain"
                     app:layout_constraintStart_toStartOf="@id/title_cp_image"

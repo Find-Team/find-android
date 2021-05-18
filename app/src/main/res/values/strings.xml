@@ -42,6 +42,9 @@
     <string name="profile_info_tall">키</string>
     <string name="profile_info_mbti">MBTI</string>
     <string name="profile_info_edu">학력</string>
+    <string name="profile_intro_title">소개글 작성</string>
+    <string name="profile_intro_explain">당신을 소개해주세요!(최소 10자)</string>
+    <string name="profile_intro_edit">직업이나 전공, 꿈과 목표가 있다면 알려주세요.</string>
 
     <!-- Profile Info Dialog -->
     <string name="dialog_info_ok">확인</string>
@@ -77,5 +80,6 @@
 
     <!-- AnyWhere -->
     <string name="complete">완료</string>
+    <string name="save">저장</string>
 
 </resources>
