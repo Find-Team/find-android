@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_question_select_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:letterSpacing="-0.04"
+        android:text="Q 1"
+        android:textColor="@color/black_33"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/tv_question_select_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
+        android:letterSpacing="-0.03"
+        android:text="연인관계를 주변에 알리는 것에 대해 어떻게 생각하세요?"
+        android:textColor="@color/black_33"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_question_select_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_question_select_number"
+        app:layout_constraintTop_toTopOf="@id/tv_question_select_number"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/tv_question_select_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border_gray_line_round_25"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:text="아직 답변을 안했어요!"
+        android:textColor="@color/gray_bd"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_question_select_title"
+        tools:ignore="SpUsage" />
+
+    <ImageButton
+        android:id="@+id/btn_question_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_question_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/tv_question_select_answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_question_select_answer"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/item_question_select_underline"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="23dp"
+        android:background="@color/gray_f2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_question_select" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
