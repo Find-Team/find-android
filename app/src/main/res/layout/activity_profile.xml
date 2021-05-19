@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_profile_image"
+                android:layout_width="0dp"
+                android:layout_height="360dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_profile_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/btn_profile_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_found_star_filled"
+                app:layout_constraintBottom_toBottomOf="@id/btn_profile_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_profile_back"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_profile_tendency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_e7e1ff"
+                android:padding="16dp"
+                android:text="당신과 비슷해서 매력적인 상대입니다 :)"
+                android:textColor="@color/black_33"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vp_profile_image"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_profile_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="21dp"
+                android:text="닉네임닉네임"
+                android:textColor="@color/black_33"
+                android:textSize="22dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_tendency"
+                tools:ignore="SpUsage" />
+
+            <ImageView
+                android:id="@+id/img_profile_certification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/ic_circle_check"
+                app:layout_constraintBottom_toBottomOf="@id/tv_profile_nickname"
+                app:layout_constraintStart_toEndOf="@id/tv_profile_nickname"
+                app:layout_constraintTop_toTopOf="@id/tv_profile_nickname"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_profile_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="나이 | 직업 |\n지역 | 직장 | 학력"
+                android:textColor="@color/gray_82"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@id/tv_profile_nickname"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_nickname"
+                tools:ignore="SpUsage" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_profile_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/tv_profile_nickname"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_information" />
+
+            <TextView
+                android:id="@+id/tv_values_move"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@color/black"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="12dp"
+                android:text="가치관 4/5\n닉네임닉네임님의 가치관 문답 보러가기"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_profile_information"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_profile_introduce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/border_white_fill_round_10"
+                android:backgroundTint="@color/gray_f2"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="20dp"
+                android:text="안녕하세용 최소 30자 최대 300자 집에 가고 싶어요
+살려주세 여 ㅏㅣㄹ아ㅣ라;라ㅏㄹ가라ㅣ라ㅣ피리ㅣㅣㅣㅣㅣㄹㅎㅍ 세림님 집에 가고 시ㅠ어여 세림님 폰트 크기어케ㅏ=하ㅏ... 세림님 집에 가고 시ㅠ어여 세림님 폰트 크기어케ㅏ=하ㅏ..."
+                android:textColor="@color/black_33"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_values_move"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_profile_interview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_introduce" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_profile_interview"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tab_profile_interview" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:paddingBottom="25dp"
+                android:weightSum="5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vp_profile_interview">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Q.1 성격매력포인트"
+                    android:textColor="@color/purple_7d5fff"
+                    android:textSize="16dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="4"
+                    android:text="매사에낙천적이에요"
+                    android:textColor="@color/black_33"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindUI">
-        <activity android:name=".ui.profile.IntroductionActivity"></activity>
+        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".ui.profile.IntroductionActivity" />
         <activity android:name=".ui.values.ValuesActivity" />
         <activity android:name=".ui.profile.CreateProfileActivity" />
         <activity android:name=".ui.main.MainActivity">
