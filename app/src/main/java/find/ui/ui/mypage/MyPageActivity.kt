@@ -1,4 +1,4 @@
-package find.ui.ui.profile
+package find.ui.ui.mypage
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import find.ui.R
 import find.ui.databinding.ActivityCreateProfileBinding
+import find.ui.ui.dialog.InfoDialogFragment
 
-class CreateProfileActivity : AppCompatActivity(), InfoDialogFragment.InfoDialogListener {
+class MyPageActivity : AppCompatActivity(), InfoDialogFragment.InfoDialogListener {
     private lateinit var binding: ActivityCreateProfileBinding
     private lateinit var dialogFragment: DialogFragment
 

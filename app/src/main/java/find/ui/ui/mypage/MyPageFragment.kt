@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import find.ui.databinding.FragmentMyPageBinding
-import find.ui.ui.profile.CreateProfileDialog
+import find.ui.ui.dialog.CreateProfileDialog
 import find.ui.util.autoCleared
 
 class MyPageFragment : Fragment() {

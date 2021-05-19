@@ -1,4 +1,4 @@
-package find.ui.ui.profile
+package find.ui.ui.dialog
 
 import android.app.AlertDialog
 import android.app.Dialog

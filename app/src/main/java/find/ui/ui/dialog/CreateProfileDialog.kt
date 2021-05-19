@@ -1,4 +1,4 @@
-package find.ui.ui.profile
+package find.ui.ui.dialog
 
 import android.app.Dialog
 import android.content.Context
@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import find.ui.R
 import find.ui.databinding.DialogCreateProfileBinding
+import find.ui.ui.mypage.MyPageActivity
 
 class CreateProfileDialog(private val context: Context) {
     private val dialogBinding: DialogCreateProfileBinding = DataBindingUtil
@@ -32,7 +33,7 @@ class CreateProfileDialog(private val context: Context) {
     private fun goToProfile() {
         dialogBinding.btnCpGoProfile.setOnClickListener {
             dialog.dismiss()
-            val intent = Intent(context, CreateProfileActivity::class.java)
+            val intent = Intent(context, MyPageActivity::class.java)
             context.startActivity(intent)
         }
     }

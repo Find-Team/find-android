@@ -1,4 +1,4 @@
-package find.ui.ui.profile
+package find.ui.ui.mypage
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import find.ui.R
 
-object ProfileBinding {
+object MyPageBinding {
     @BindingAdapter("changeColor")
     @JvmStatic
     fun changeColor(text: TextView, content: String?) {
