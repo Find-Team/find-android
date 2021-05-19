@@ -53,6 +53,14 @@
     <string name="dialog_info_job">직업을 적어주세요</string>
     <string name="dialog_info_office">직장을 적어주세요</string>
 
+    <!-- Interview -->
+    <string name="interview_title">인터뷰</string>
+    <string name="interview_explain">상대에게 당신을 좀 더 알려주세요!</string>
+    <string name="interview_strength">장점</string>
+    <string name="interview_love">연애</string>
+    <string name="interview_like">호불호</string>
+    <string name="interview_life">라이프</string>
+
     <!-- Scan -->
     <string name="scan_title">상대 찾기</string>
     <string name="scan_tab_find">FIND</string>
