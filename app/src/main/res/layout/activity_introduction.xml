@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="profileViewModel"
+            type="find.ui.ui.profile.ProfileViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -86,8 +93,12 @@
             android:gravity="left"
             android:hint="@string/profile_intro_edit"
             android:importantForAutofill="no"
-            android:inputType="text"
-            android:padding="16dp"
+            android:inputType="textMultiLine"
+            android:maxLength="500"
+            android:paddingHorizontal="26dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="44dp"
+            android:text="@={profileViewModel.introContent}"
             android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -97,11 +108,13 @@
 
         <TextView
             android:id="@+id/tv_intro_limit"
+            changeColor="@{profileViewModel.introContent}"
+            setTextLength="@{profileViewModel.introContent}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="156dp"
-            android:text="0/500"
+            android:text="@{profileViewModel.introLength}"
             android:textColor="@color/gray_bd"
             android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="parent"

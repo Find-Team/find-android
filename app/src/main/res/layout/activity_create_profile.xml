@@ -295,6 +295,7 @@
                     android:layout_marginTop="17dp"
                     android:background="@drawable/border_purple99_line_purple7d_round_10"
                     android:minHeight="0dp"
+                    android:onClick="@{()->profileActivity.goToIntroduction()}"
                     android:paddingVertical="15dp"
                     android:text="@string/profile_introduction_go"
                     android:textColor="@color/purple_7d5fff"
