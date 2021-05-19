@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindUI">
+        <activity android:name=".ui.interview.InterviewActivity"></activity>
         <activity android:name=".ui.profile.ProfileActivity" />
         <activity android:name=".ui.mypage.IntroductionActivity" />
         <activity android:name=".ui.values.ValuesActivity" />
