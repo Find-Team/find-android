@@ -7,13 +7,13 @@
 
         <variable
             name="profileActivity"
-            type="find.ui.ui.profile.CreateProfileActivity" />
+            type="find.ui.ui.mypage.MyPageActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.profile.CreateProfileActivity">
+        tools:context=".ui.mypage.MyPageActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_cp_top_menu"

@@ -7,7 +7,7 @@
 
         <variable
             name="createProfileDialog"
-            type="find.ui.ui.profile.CreateProfileDialog" />
+            type="find.ui.ui.dialog.CreateProfileDialog" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

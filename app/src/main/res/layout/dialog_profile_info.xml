@@ -7,7 +7,7 @@
 
         <variable
             name="infoDialog"
-            type="find.ui.ui.profile.InfoDialogFragment" />
+            type="find.ui.ui.dialog.InfoDialogFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
