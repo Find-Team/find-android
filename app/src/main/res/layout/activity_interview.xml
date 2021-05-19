@@ -74,5 +74,28 @@
             app:layout_constraintStart_toStartOf="@id/tv_interview_title"
             app:layout_constraintTop_toBottomOf="@id/tv_interview_title" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_interview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_bottom_2_gray_bd_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_interview_explain"
+            app:tabIndicatorHeight="2dp"
+            app:tabSelectedTextColor="@color/purple_9980fa"
+            app:tabTextColor="@color/gray_82" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_interview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_interview" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
