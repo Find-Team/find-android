@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/border_white_fill_round_10"
+    android:backgroundTint="@color/gray_f2">
+
+    <TextView
+        android:id="@+id/tv_ask_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Q.1"
+        android:textColor="@color/black_33"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/tv_ask_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="성격 &amp; 매력포인트"
+        android:textColor="@color/gray_4f"
+        android:textSize="13dp"
+        app:layout_constraintStart_toEndOf="@id/tv_ask_num"
+        app:layout_constraintTop_toTopOf="@id/tv_ask_num"
+        tools:ignore="SpUsage" />
+
+    <EditText
+        android:id="@+id/et_ask_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:inputType="textMultiLine"
+        android:maxLength="40"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ask_title" />
+
+    <TextView
+        android:id="@+id/tv_ask_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="11dp"
+        android:text="0/40"
+        android:textColor="@color/gray_bd"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ask_title"
+        tools:ignore="SpUsage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
