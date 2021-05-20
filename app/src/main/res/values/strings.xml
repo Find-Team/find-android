@@ -86,6 +86,10 @@
     <string name="question_prev">이전</string>
     <string name="question_next">다음</string>
 
+    <!-- Search -->
+    <string name="search_title">검색중...</string>
+    <string name="search_content">당신과 닮은 점이\n많은 사람을\n찾고있어요...!</string>
+
     <!-- AnyWhere -->
     <string name="complete">완료</string>
     <string name="save">저장</string>
