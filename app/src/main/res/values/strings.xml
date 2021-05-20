@@ -76,6 +76,9 @@
     <string name="find_similarity">나와\n닮은 점이\n많은 사람을 원해요!\n(상호 유사성)</string>
     <string name="find_bang">FIND!</string>
 
+    <!-- Found -->
+    <string name="found_not_find">FIND 버튼을 눌러\n상대를 먼저 검색하세요!</string>
+
     <!-- Values -->
     <string name="value_question">가치관 문답</string>
     <string name="value_select">가치관 선택</string>
@@ -94,5 +97,6 @@
     <!-- AnyWhere -->
     <string name="complete">완료</string>
     <string name="save">저장</string>
+    <string name="confirm">확인</string>
 
 </resources>
