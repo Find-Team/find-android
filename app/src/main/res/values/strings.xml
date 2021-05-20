@@ -94,6 +94,13 @@
     <string name="search_title">검색중...</string>
     <string name="search_content">당신과 닮은 점이\n많은 사람을\n찾고있어요...!</string>
 
+    <!-- Answer -->
+    <string name="answer_title">당신과 다르기에 더욱 매력적인</string>
+    <string name="answer_value_question">님의 가치관 문답</string>
+    <string name="answer_value_filter">가치관 필터</string>
+    <string name="answer_what_value">어떤 가치관을 기준으로 매칭되었을까요?</string>
+    <string name="answer_opponent_value">상대는 어떤 사람일까요, 확인해 보세요 :)</string>
+
     <!-- AnyWhere -->
     <string name="complete">완료</string>
     <string name="save">저장</string>
