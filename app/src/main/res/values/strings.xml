@@ -60,6 +60,7 @@
     <string name="interview_love">연애</string>
     <string name="interview_like">호불호</string>
     <string name="interview_life">라이프</string>
+    <string name="interview_photo_explain">본인의 라이브 스타일을 \n 잘 보여주는 사진을 \n 업로드 해주세요</string>
 
     <!-- Scan -->
     <string name="scan_title">상대 찾기</string>
