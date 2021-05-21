@@ -3,17 +3,15 @@ package find.ui.ui.mypage
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.DialogFragment
 import find.ui.R
 import find.ui.databinding.ActivityCreateProfileBinding
-import find.ui.ui.dialog.InfoDialogFragment
+import find.ui.ui.dialog.InfoDialog
+import kotlin.properties.Delegates
 
-class MyPageActivity : AppCompatActivity(), InfoDialogFragment.InfoDialogListener {
+class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateProfileBinding
-    private lateinit var dialogFragment: DialogFragment
+    private var from by Delegates.notNull<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,26 +22,22 @@ class MyPageActivity : AppCompatActivity(), InfoDialogFragment.InfoDialogListene
 
     fun showTextInputDialog(view: View) {
         when (view) {
-            binding.layoutCpInfoJob -> {
-                dialogFragment =
-                    InfoDialogFragment.newInstance(applicationContext.getString(R.string.dialog_info_job))
-                dialogFragment.show(supportFragmentManager, DIALOG_TAG)
-            }
-            binding.layoutCpInfoOffice -> {
-                dialogFragment =
-                    InfoDialogFragment.newInstance(applicationContext.getString(R.string.dialog_info_office))
-                dialogFragment.show(supportFragmentManager, DIALOG_TAG)
-            }
+            binding.layoutCpInfoJob -> from = 0
+            binding.layoutCpInfoOffice -> from = 1
         }
+        val dialog = InfoDialog(from)
+        dialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
-    override fun onBtnOkClick(dialog: DialogFragment, content: String, args: String) {
-        when (args) {
-            applicationContext.getString(R.string.dialog_info_job) -> {
-                setTextStyle(binding.tvCpInfoJob, content)
+    fun setTextStyle(from: Int, content: String) {
+        when (from) {
+            0 -> {
+                binding.tvCpInfoJob.text = content
+                binding.tvCpInfoJob.setTextColor(baseContext.getColor(R.color.gray_4f))
             }
-            applicationContext.getString(R.string.dialog_info_office) -> {
-                setTextStyle(binding.tvCpInfoOffice, content)
+            1 -> {
+                binding.tvCpInfoOffice.text = content
+                binding.tvCpInfoOffice.setTextColor(baseContext.getColor(R.color.gray_4f))
             }
         }
     }
@@ -51,11 +45,6 @@ class MyPageActivity : AppCompatActivity(), InfoDialogFragment.InfoDialogListene
     fun goToIntroduction() {
         val intent = Intent(this, IntroductionActivity::class.java)
         startActivity(intent)
-    }
-
-    private fun setTextStyle(textView: TextView, content: String) {
-        textView.text = content
-        textView.setTextColor((ContextCompat.getColor(applicationContext, R.color.gray_4f)))
     }
 
     companion object {
