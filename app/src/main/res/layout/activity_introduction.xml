@@ -108,8 +108,8 @@
 
         <TextView
             android:id="@+id/tv_intro_limit"
-            changeColor="@{profileViewModel.introContent}"
-            setTextLength="@{profileViewModel.introContent}"
+            changeIntroColor="@{profileViewModel.introContent}"
+            setTextIntroLength="@{profileViewModel.introContent}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"

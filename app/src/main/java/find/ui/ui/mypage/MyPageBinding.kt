@@ -7,7 +7,7 @@ import androidx.databinding.BindingAdapter
 import find.ui.R
 
 object MyPageBinding {
-    @BindingAdapter("changeColor")
+    @BindingAdapter("changeIntroColor")
     @JvmStatic
     fun changeColor(text: TextView, content: String?) {
         when (content?.length) {
@@ -18,7 +18,7 @@ object MyPageBinding {
     }
 
     @SuppressLint("SetTextI18n")
-    @BindingAdapter("setTextLength")
+    @BindingAdapter("setTextIntroLength")
     @JvmStatic
     fun setTextLength(text: TextView, editText: String?) {
         text.text = "${editText?.length}/500"
