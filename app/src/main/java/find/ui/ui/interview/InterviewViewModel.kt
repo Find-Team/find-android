@@ -9,6 +9,5 @@ class InterviewViewModel : ViewModel() {
     val interviewContent = ObservableField<String>()
 
     private val _interviewLength = MutableLiveData("0/40")
-    val interviewLength: LiveData<String>
-        get() = _interviewLength
+    val interviewLength: LiveData<String> = _interviewLength
 }

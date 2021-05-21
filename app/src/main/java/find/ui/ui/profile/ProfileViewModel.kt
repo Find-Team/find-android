@@ -7,8 +7,7 @@ import androidx.lifecycle.ViewModel
 
 class ProfileViewModel : ViewModel() {
     private val _introLength = MutableLiveData("0/500")
-    val introLength: LiveData<String>
-        get() = _introLength
+    val introLength: LiveData<String> = _introLength
 
     val introContent = ObservableField<String>()
 }
