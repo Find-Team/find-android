@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_white_fill_round_4"
+        android:backgroundTint="@color/purple_9980fa_0.15"
+        android:paddingHorizontal="13dp"
+        android:paddingVertical="8dp"
+        android:text="Q. 연인관계를 주변에 알리고 공개하는 것"
+        android:textColor="@color/purple_7d5fff"
+        android:textSize="12dp"
+        tools:ignore="SpUsage" />
+</LinearLayout>
