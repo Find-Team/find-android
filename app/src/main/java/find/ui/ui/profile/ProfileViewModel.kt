@@ -10,4 +10,5 @@ class ProfileViewModel : ViewModel() {
     val introLength: LiveData<String> = _introLength
 
     val introContent = ObservableField<String>()
+    val infoContent = ObservableField<String>()
 }

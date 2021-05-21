@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="infoDialog"
-            type="find.ui.ui.dialog.InfoDialogFragment" />
+            name="viewModel"
+            type="find.ui.ui.profile.ProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,7 +52,7 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:maxLength="8"
-            android:text="@={infoDialog.textInputInfo}"
+            android:text="@={viewModel.infoContent}"
             android:textColor="@color/black"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
