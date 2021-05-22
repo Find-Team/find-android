@@ -25,7 +25,7 @@ class IntroductionActivity : AppCompatActivity() {
     private fun saveData() {
         binding.tvIntroSave.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)
-            intent.putExtra("content", profileViewModel.introContent.get())
+            intent.putExtra("content", profileViewModel.introContent)
             setResult(RESULT_OK, intent)
             finish()
         }
