@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import find.ui.R
 import find.ui.databinding.ActivityCreateProfileBinding
 import find.ui.ui.dialog.InfoDialog
+import find.ui.ui.dialog.PickerDialog
 import kotlin.properties.Delegates
 
 class MyPageActivity : AppCompatActivity() {
@@ -24,6 +25,11 @@ class MyPageActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.profileActivity = this
         initActivityForResult()
+    }
+
+    fun showPickerDialog() {
+        val pickerDialog = PickerDialog()
+        pickerDialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
     fun showTextInputDialog(view: View) {
@@ -81,6 +87,6 @@ class MyPageActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val DIALOG_TAG = "Info Dialog"
+        const val DIALOG_TAG = "Dialog"
     }
 }
