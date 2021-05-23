@@ -27,6 +27,7 @@ class QuestionAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(question: Question) {
             binding.setVariable(BR.question, question)
+            binding.setVariable(BR.position, adapterPosition)
         }
     }
 

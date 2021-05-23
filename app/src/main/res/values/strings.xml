@@ -89,6 +89,7 @@
     <!-- Question -->
     <string name="question_prev">이전</string>
     <string name="question_next">다음</string>
+    <string name="question_position">%d/10</string>
 
     <!-- Search -->
     <string name="search_title">검색중...</string>
