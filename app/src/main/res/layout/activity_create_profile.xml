@@ -537,6 +537,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_info_edu"
                     style="@style/layout_profile_account"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintEnd_toStartOf="@id/layout_cp_info_mbti"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_info_job"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_info_job">
