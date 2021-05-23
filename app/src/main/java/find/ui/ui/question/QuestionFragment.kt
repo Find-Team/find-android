@@ -5,14 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import find.ui.R
+import find.ui.databinding.FragmentQuestionBinding
+import find.ui.util.autoCleared
 
-class QuestionFragment : Fragment() {
+class QuestionFragment(private val questionList: List<Question>) : Fragment() {
+    private var binding by autoCleared<FragmentQuestionBinding>()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_question, container, false)
+    ): View {
+        binding = FragmentQuestionBinding.inflate(layoutInflater)
+        setAdapter()
+        return binding.root
+    }
+
+    private fun setAdapter() {
+        binding.vpQuestion.adapter = QuestionAdapter()
+        (binding.vpQuestion.adapter as QuestionAdapter).submitList(questionList)
     }
 }
