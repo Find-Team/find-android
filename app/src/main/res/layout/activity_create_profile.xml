@@ -564,6 +564,7 @@
                     android:id="@+id/layout_cp_info_mbti"
                     style="@style/layout_profile_account"
                     android:layout_marginStart="12dp"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
                     app:layout_constraintStart_toEndOf="@id/layout_cp_info_edu"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_info_office">
@@ -589,6 +590,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_info_tall"
                     style="@style/layout_profile_account"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_info_job"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_info_edu"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_info_edu">
@@ -615,6 +617,7 @@
                     android:id="@+id/layout_cp_info_form"
                     style="@style/layout_profile_account"
                     android:layout_marginStart="12dp"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
                     app:layout_constraintStart_toEndOf="@id/layout_cp_info_tall"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_info_mbti">
@@ -640,6 +643,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_cp_info_smoke"
                     style="@style/layout_profile_account"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_info_job"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_info_edu"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_info_tall">
@@ -666,6 +670,7 @@
                     android:id="@+id/layout_cp_info_religion"
                     style="@style/layout_profile_account"
                     android:layout_marginStart="12dp"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
                     app:layout_constraintStart_toEndOf="@id/layout_cp_info_tall"
                     app:layout_constraintTop_toBottomOf="@id/layout_cp_info_form">
@@ -692,6 +697,7 @@
                     android:id="@+id/layout_cp_info_married"
                     style="@style/layout_profile_account"
                     android:layout_marginBottom="103dp"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_info_job"
                     app:layout_constraintStart_toStartOf="@id/layout_cp_info_edu"
@@ -720,6 +726,7 @@
                     style="@style/layout_profile_account"
                     android:layout_marginStart="12dp"
                     android:layout_marginBottom="103dp"
+                    android:onClick="showPickerDialog"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/layout_cp_info_office"
                     app:layout_constraintStart_toEndOf="@id/layout_cp_info_tall"

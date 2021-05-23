@@ -29,6 +29,8 @@
     <style name="profile_info_default" parent="tv_profile_info">
         <item name="android:text">@string/profile_info_select</item>
         <item name="android:textColor">@color/gray_bd</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="wrap_black33_20">
