@@ -36,20 +36,22 @@ class InfoDialog(private val from: Int) : DialogFragment() {
         context?.dialogResize(this, 0.6f, 0.3f)
     }
 
-    private fun setText(content: String) {
-        dialogInfoBinding.titleInfoDialog.text = content
-    }
-
     private fun whereFrom() {
         when (from) {
-            0 -> setText(requireContext().getString(R.string.dialog_info_job))
-            1 -> setText(requireContext().getString(R.string.dialog_info_office))
+            0 -> viewModel.setTitle(
+                dialogInfoBinding.titleInfoDialog,
+                requireContext().getString(R.string.dialog_info_job)
+            )
+            1 -> viewModel.setTitle(
+                dialogInfoBinding.titleInfoDialog,
+                requireContext().getString(R.string.dialog_info_office)
+            )
         }
     }
 
     private fun saveInfoData() {
         dialogInfoBinding.btnInfoDialogOk.setOnClickListener {
-            (requireActivity() as MyPageActivity).setTextStyle(
+            (requireActivity() as MyPageActivity).changeText(
                 from,
                 viewModel.infoContent.get().toString()
             )

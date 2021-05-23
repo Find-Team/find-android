@@ -1,5 +1,6 @@
 package find.ui.ui.profile
 
+import android.widget.TextView
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,4 +12,8 @@ class ProfileViewModel : ViewModel() {
 
     val introContent = ObservableField<String>()
     val infoContent = ObservableField<String>()
+
+    fun setTitle(textView: TextView, content: String) {
+        textView.text = content
+    }
 }

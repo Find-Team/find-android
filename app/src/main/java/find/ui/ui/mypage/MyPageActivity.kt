@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
+import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -27,8 +28,18 @@ class MyPageActivity : AppCompatActivity() {
         initActivityForResult()
     }
 
-    fun showPickerDialog() {
-        val pickerDialog = PickerDialog()
+    fun showPickerDialog(view: View) {
+        when (view) {
+            binding.layoutCpInfoEdu -> from = 2
+            binding.layoutCpInfoMbti -> from = 3
+            binding.layoutCpInfoTall -> from = 4
+            binding.layoutCpInfoForm -> from = 5
+            binding.layoutCpInfoSmoke -> from = 6
+            binding.layoutCpInfoReligion -> from = 7
+            binding.layoutCpInfoMarried -> from = 8
+            binding.layoutCpInfoDrink -> from = 9
+        }
+        val pickerDialog = PickerDialog(from)
         pickerDialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
@@ -41,17 +52,24 @@ class MyPageActivity : AppCompatActivity() {
         dialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
-    fun setTextStyle(from: Int, content: String) {
+    fun changeText(from: Int, content: String) {
         when (from) {
-            0 -> {
-                binding.tvCpInfoJob.text = content
-                binding.tvCpInfoJob.setTextColor(baseContext.getColor(R.color.gray_4f))
-            }
-            1 -> {
-                binding.tvCpInfoOffice.text = content
-                binding.tvCpInfoOffice.setTextColor(baseContext.getColor(R.color.gray_4f))
-            }
+            0 -> setTextStyle(binding.tvCpInfoJob, content)
+            1 -> setTextStyle(binding.tvCpInfoOffice, content)
+            2 -> setTextStyle(binding.tvCpInfoEdu, content)
+            3 -> setTextStyle(binding.tvCpInfoMbti, content)
+            4 -> setTextStyle(binding.tvCpInfoTall, content)
+            5 -> setTextStyle(binding.tvCpInfoForm, content)
+            6 -> setTextStyle(binding.tvCpInfoSmoke, content)
+            7 -> setTextStyle(binding.tvCpInfoReligion, content)
+            8 -> setTextStyle(binding.tvCpInfoMarried, content)
+            9 -> setTextStyle(binding.tvCpInfoDrink, content)
         }
+    }
+
+    private fun setTextStyle(textView: TextView, txt: String) {
+        textView.text = txt
+        textView.setTextColor(baseContext.getColor(R.color.gray_4f))
     }
 
     private fun changeIntroStyle(content: String) {
