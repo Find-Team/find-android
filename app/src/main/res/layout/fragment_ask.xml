@@ -1,18 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.interview.AskFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_ask"
-        android:layout_width="0dp"
+    <data>
+
+        <variable
+            name="interviewViewModel"
+            type="find.ui.ui.interview.InterviewViewModel" />
+
+        <variable
+            name="fragment"
+            type="find.ui.ui.interview.AskFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_interview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_ask" />
+        android:layout_marginHorizontal="16dp"
+        tools:context=".ui.interview.AskFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_interview_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_white_fill_round_10"
+            android:backgroundTint="@color/gray_f2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_first_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Q.1"
+                android:textColor="@color/black_33"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_first_question"
+                setQuestion="@{fragment.interviewList[0].question}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:textColor="@color/gray_4f"
+                android:textSize="13dp"
+                app:layout_constraintStart_toEndOf="@id/tv_first_position"
+                app:layout_constraintTop_toTopOf="@id/tv_first_position"
+                tools:ignore="SpUsage" />
+
+            <EditText
+                android:id="@+id/et_first_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:maxLength="40"
+                android:maxLines="2"
+                android:text="@={interviewViewModel.interviewFirstAnswer}"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_first_question"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_first_limit"
+                changeInterviewColor="@{interviewViewModel.interviewFirstAnswer}"
+                setLengthText="@{interviewViewModel.interviewFirstAnswer}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="11dp"
+                android:text="@{interviewViewModel.interviewLength}"
+                android:textColor="@color/gray_bd"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_first_question"
+                tools:ignore="SpUsage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_interview_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_white_fill_round_10"
+            android:backgroundTint="@color/gray_f2"
+            app:layout_constraintStart_toStartOf="@+id/layout_interview_first"
+            app:layout_constraintTop_toBottomOf="@+id/layout_interview_first">
+
+            <TextView
+                android:id="@+id/tv_second_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Q.2"
+                android:textColor="@color/black_33"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_second_question"
+                setQuestion="@{fragment.interviewList[1].question}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:textColor="@color/gray_4f"
+                android:textSize="13dp"
+                app:layout_constraintStart_toEndOf="@id/tv_second_position"
+                app:layout_constraintTop_toTopOf="@id/tv_second_position"
+                tools:ignore="SpUsage" />
+
+            <EditText
+                android:id="@+id/et_second_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:maxLength="40"
+                android:maxLines="2"
+                android:text="@={interviewViewModel.interviewSecondAnswer}"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_second_question"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_second_limit"
+                changeInterviewColor="@{interviewViewModel.interviewSecondAnswer}"
+                setLengthText="@{interviewViewModel.interviewSecondAnswer}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="11dp"
+                android:text="@{interviewViewModel.interviewLength}"
+                android:textColor="@color/gray_bd"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_second_question"
+                tools:ignore="SpUsage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_interview_third"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_white_fill_round_10"
+            android:backgroundTint="@color/gray_f2"
+            app:layout_constraintStart_toStartOf="@+id/layout_interview_first"
+            app:layout_constraintTop_toBottomOf="@+id/layout_interview_second">
+
+            <TextView
+                android:id="@+id/tv_third_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Q.3"
+                android:textColor="@color/black_33"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_third_question"
+                setQuestion="@{fragment.interviewList[2].question}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:textColor="@color/gray_4f"
+                android:textSize="13dp"
+                app:layout_constraintStart_toEndOf="@id/tv_third_position"
+                app:layout_constraintTop_toTopOf="@id/tv_third_position"
+                tools:ignore="SpUsage" />
+
+            <EditText
+                android:id="@+id/et_third_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:maxLength="40"
+                android:maxLines="2"
+                android:text="@={interviewViewModel.interviewThirdAnswer}"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_third_question"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_third_limit"
+                changeInterviewColor="@{interviewViewModel.interviewThirdAnswer}"
+                setLengthText="@{interviewViewModel.interviewThirdAnswer}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="11dp"
+                android:text="@{interviewViewModel.interviewLength}"
+                android:textColor="@color/gray_bd"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_third_question"
+                tools:ignore="SpUsage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_interview_fourth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_white_fill_round_10"
+            android:backgroundTint="@color/gray_f2"
+            app:layout_constraintStart_toStartOf="@+id/layout_interview_first"
+            app:layout_constraintTop_toBottomOf="@+id/layout_interview_third">
+
+            <TextView
+                android:id="@+id/tv_fourth_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Q.4"
+                android:textColor="@color/black_33"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_fourth_question"
+                setQuestion="@{fragment.interviewList[3].question}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:textColor="@color/gray_4f"
+                android:textSize="13dp"
+                app:layout_constraintStart_toEndOf="@id/tv_fourth_position"
+                app:layout_constraintTop_toTopOf="@id/tv_fourth_position"
+                tools:ignore="SpUsage" />
+
+            <EditText
+                android:id="@+id/et_fourth_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:maxLength="40"
+                android:maxLines="2"
+                android:text="@={interviewViewModel.interviewFourthAnswer}"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_fourth_question"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_fourth_limit"
+                changeInterviewColor="@{interviewViewModel.interviewFourthAnswer}"
+                setLengthText="@{interviewViewModel.interviewFourthAnswer}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="11dp"
+                android:text="@{interviewViewModel.interviewLength}"
+                android:textColor="@color/gray_bd"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_fourth_question"
+                tools:ignore="SpUsage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

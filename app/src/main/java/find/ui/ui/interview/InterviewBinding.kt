@@ -16,9 +16,15 @@ object InterviewBinding {
     }
 
     @SuppressLint("SetTextI18n")
-    @BindingAdapter("setTextInterviewLength")
+    @BindingAdapter("setLengthText")
     @JvmStatic
-    fun setTextInterviewLength(text: TextView, editText: String?) {
-        text.text = "${editText?.length}/40"
+    fun setLengthText(textView: TextView, content: String?) {
+        textView.text = "${content?.length}/40"
+    }
+
+    @BindingAdapter("setQuestion")
+    @JvmStatic
+    fun setQuestion(textView: TextView, content: String) {
+        textView.text = content
     }
 }
