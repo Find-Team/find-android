@@ -35,13 +35,20 @@ class InterviewActivity : AppCompatActivity() {
             override fun getItemCount() = 4
             override fun createFragment(position: Int): Fragment {
                 return when (position) {
-                    0 -> AskFragment()
-                    1 -> AskFragment()
-                    2 -> AskFragment()
-                    3 -> AskFragment()
+                    0 -> AskFragment(strengthList())
+                    1 -> AskFragment(strengthList())
+                    2 -> AskFragment(strengthList())
+                    3 -> AskFragment(strengthList())
                     else -> throw IndexOutOfBoundsException()
                 }
             }
         }
     }
+
+    private fun strengthList() = listOf(
+        Interview("성격 & 매력포인트", ""),
+        Interview("외모 특징 & 자신있는 부분", ""),
+        Interview("잘하는 것 & 특기", ""),
+        Interview("가지고 있는 것 & 자랑거리", "")
+    )
 }
