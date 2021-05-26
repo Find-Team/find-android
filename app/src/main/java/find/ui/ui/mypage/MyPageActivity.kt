@@ -13,6 +13,7 @@ import find.ui.R
 import find.ui.databinding.ActivityCreateProfileBinding
 import find.ui.ui.dialog.InfoDialog
 import find.ui.ui.dialog.PickerDialog
+import find.ui.ui.profile.ProfileGuideActivity
 import kotlin.properties.Delegates
 
 class MyPageActivity : AppCompatActivity() {
@@ -88,6 +89,15 @@ class MyPageActivity : AppCompatActivity() {
     fun goToIntroduction() {
         val intent = Intent(this, IntroductionActivity::class.java)
         startActivityResult.launch(intent)
+    }
+
+    fun goToProfileGuide() {
+        val intent = Intent(this, ProfileGuideActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun finishCreateProfile() {
+        finish()
     }
 
     private fun initActivityForResult() {

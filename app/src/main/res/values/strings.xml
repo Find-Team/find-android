@@ -53,6 +53,18 @@
     <string name="dialog_info_job">직업을 적어주세요</string>
     <string name="dialog_info_office">직장을 적어주세요</string>
 
+    <!-- Profile Guide -->
+    <string name="profile_guide_title">프로필 가이드</string>
+    <string name="guide_recommend_first">#이목구비가 선명하게 나온 사진</string>
+    <string name="guide_recommend_second">#분위기 있는 바스트 샷</string>
+    <string name="guide_recommend_third">#자연스러운 활동 사진</string>
+    <string name="guide_recommend_explain">패션 센스가 돋보이는 사진, \n 관심사 또는 취미에 열중하는 사진 등 \n 분위기를 보여줄 수 있는 사진이 매칭률을 높여줍니다 \n 좋은 화질은 상대를 위한 기본!</string>
+    <string name="guide_not_recommend_explain">과한 필터나 스티커를 사용한 사진, \n 화질이 좋지 않은 사진은 매칭률을 떨어뜨려요!</string>
+    <string name="guide_not_recommend_fourth">#좋지 않은 화질</string>
+    <string name="guide_not_recommend_fifth">#과도한 필터나 스티커</string>
+    <string name="title_not_recommend">추천하지 않는 사진</string>
+    <string name="title_recommend">추천하는 사진</string>
+
     <!-- Interview -->
     <string name="interview_title">인터뷰</string>
     <string name="interview_explain">상대에게 당신을 좀 더 알려주세요!</string>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileGuideActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_guide_top_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_guide_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/title_profile_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_guide_title"
+            android:textColor="@color/black_33"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_guide_top_menu">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/tv_guide_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:text="@string/title_recommend"
+                android:textColor="@color/black_33"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_guide_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_purple_line_round_40"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="@string/guide_recommend_first"
+                android:textColor="@color/purple_7d5fff"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_recommend"
+                tools:ignore="SpUsage" />
+
+            <ImageView
+                android:id="@+id/img_guide_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_guide_first"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_first"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_guide_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/border_purple_line_round_40"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="@string/guide_recommend_second"
+                android:textColor="@color/purple_7d5fff"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/img_guide_first"
+                tools:ignore="SpUsage" />
+
+            <ImageView
+                android:id="@+id/img_guide_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_guide_second"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_second"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_guide_third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/border_purple_line_round_40"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="@string/guide_recommend_third"
+                android:textColor="@color/purple_7d5fff"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/img_guide_second"
+                tools:ignore="SpUsage" />
+
+            <ImageView
+                android:id="@+id/img_guide_third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_guide_third"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_third"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_guide_explain_recommend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/border_white_fill_round_10"
+                android:backgroundTint="@color/purple_e7e1ff"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="20dp"
+                android:text="@string/guide_recommend_explain"
+                android:textColor="@color/black_33"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_guide_third"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_guide_not_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/title_not_recommend"
+                android:textColor="@color/black_33"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_explain_recommend"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_guide_fourth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_purple_line_round_40"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="@string/guide_not_recommend_fourth"
+                android:textColor="@color/purple_7d5fff"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_not_recommend"
+                tools:ignore="SpUsage" />
+
+            <ImageView
+                android:id="@+id/img_guide_fourth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_guide_fourth"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_fourth"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_guide_fifth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/border_purple_line_round_40"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="@string/guide_not_recommend_fifth"
+                android:textColor="@color/purple_7d5fff"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/img_guide_fourth"
+                tools:ignore="SpUsage" />
+
+            <ImageView
+                android:id="@+id/img_guide_fifth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_guide_fifth"
+                app:layout_constraintStart_toStartOf="@id/tv_guide_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide_fifth"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_guide_explain_not_recommend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="93dp"
+                android:background="@drawable/border_white_fill_round_10"
+                android:backgroundTint="@color/purple_e7e1ff"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp"
+                android:text="@string/guide_not_recommend_explain"
+                android:textColor="@color/black_33"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_guide_fifth"
+                tools:ignore="SpUsage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
