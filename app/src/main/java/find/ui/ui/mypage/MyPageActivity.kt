@@ -8,11 +8,14 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import find.ui.R
 import find.ui.databinding.ActivityCreateProfileBinding
 import find.ui.ui.dialog.InfoDialog
 import find.ui.ui.dialog.PickerDialog
+import find.ui.ui.picture.PictureAdapter
+import find.ui.ui.picture.PictureViewModel
 import find.ui.ui.profile.ProfileGuideActivity
 import kotlin.properties.Delegates
 
@@ -20,6 +23,7 @@ class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateProfileBinding
     private var from by Delegates.notNull<Int>()
     private lateinit var startActivityResult: ActivityResultLauncher<Intent>
+    private val viewModel: PictureViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +31,8 @@ class MyPageActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.profileActivity = this
         initActivityForResult()
+        setAdapter()
+        setPictureList()
     }
 
     fun showPickerDialog(view: View) {
@@ -111,6 +117,20 @@ class MyPageActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+    }
+
+    private fun setAdapter() {
+        binding.rvProfilePicture.adapter = PictureAdapter() { pic, pos ->
+            viewModel.itemPos.value = pos
+            viewModel.itemImage.value = pic.image
+        }
+        viewModel.setDefaultPicture()
+    }
+
+    private fun setPictureList() {
+        viewModel.pictureList.observe(this) { items ->
+            (binding.rvProfilePicture.adapter as PictureAdapter).submitList(items)
         }
     }
 
