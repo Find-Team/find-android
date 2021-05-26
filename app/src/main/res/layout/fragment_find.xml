@@ -193,8 +193,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_find_opponent"
                 style="?android:attr/borderlessButtonStyle"
-                isComplementary="@{findViewModel.isComplementary}"
-                isSimilarity="@{findViewModel.isSimilarity}"
+                isButtonActive="@{findViewModel.isFindButtonActive}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"

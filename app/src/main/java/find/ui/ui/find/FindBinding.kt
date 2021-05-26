@@ -18,14 +18,14 @@ object FindBinding {
         }
     }
 
-    @BindingAdapter("isSimilarity", "isComplementary")
+    @BindingAdapter("isButtonActive")
     @JvmStatic
-    fun isButtonActive(button: Button, isSimilarity: Boolean, isComplementary: Boolean) {
-        when {
-            isSimilarity || isComplementary -> {
+    fun isButtonActive(button: Button, isButtonActive: Boolean) {
+        when (isButtonActive) {
+            true -> {
                 button.backgroundTintList = button.context.getColorStateList(R.color.mint_81ec)
             }
-            else -> {
+            false -> {
                 button.backgroundTintList = button.context.getColorStateList(R.color.gray_e0)
             }
         }

@@ -11,17 +11,22 @@ class FindViewModel : ViewModel() {
     private val _isComplementary = MutableLiveData(false)
     val isComplementary: LiveData<Boolean> = _isComplementary
 
+    private val _isFindButtonActive = MutableLiveData(false)
+    val isFindButtonActive: LiveData<Boolean> = _isFindButtonActive
+
     private val _tempList = MutableLiveData<List<String>>()
     val tempList: LiveData<List<String>> = _tempList
 
     fun selectSimilarity() {
-        _isSimilarity.value = !_isSimilarity.value!!
+        _isSimilarity.value = !requireNotNull(_isSimilarity.value)
         _isComplementary.value = false
+        isPossibleCheck()
     }
 
     fun selectComplementary() {
-        _isComplementary.value = !_isComplementary.value!!
+        _isComplementary.value = !requireNotNull(_isComplementary.value)
         _isSimilarity.value = false
+        isPossibleCheck()
     }
 
     fun setTempList() {
@@ -33,5 +38,10 @@ class FindViewModel : ViewModel() {
                 "주말에 필요한 개인적인 시간",
                 "애인이 다른 이성친구와 단둘이 만난다면?"
             )
+    }
+
+    private fun isPossibleCheck() {
+        _isFindButtonActive.value =
+            (requireNotNull(_isSimilarity.value) || requireNotNull(_isComplementary.value)) && !tempList.value.isNullOrEmpty()
     }
 }
