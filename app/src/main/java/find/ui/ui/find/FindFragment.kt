@@ -25,6 +25,8 @@ class FindFragment : Fragment() {
         binding.lifecycleOwner = this@FindFragment
         startQuestionFragment()
         startSelectFragment()
+        setAdapter()
+        setTempList()
         return binding.root
     }
 
@@ -41,6 +43,17 @@ class FindFragment : Fragment() {
             val intent = Intent(requireContext(), ValuesActivity::class.java)
             intent.putExtra("values", "select")
             startActivity(intent)
+        }
+    }
+
+    private fun setAdapter() {
+        binding.rvFindMyValue.adapter = FindMyValueAdapter()
+        findViewModel.setTempList()
+    }
+
+    private fun setTempList() {
+        findViewModel.tempList.observe(viewLifecycleOwner) {
+            (binding.rvFindMyValue.adapter as FindMyValueAdapter).submitList(it)
         }
     }
 }

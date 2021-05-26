@@ -5,198 +5,209 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="findViewModel"
             type="find.ui.ui.find.FindViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        tools:context=".ui.find.FindFragment">
-
-        <TextView
-            android:id="@+id/tv_find_value_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="22dp"
-            android:text="@string/find_value_title"
-            android:textColor="@color/gray_4f"
-            android:textSize="18dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpUsage" />
-
-        <TextView
-            android:id="@+id/tv_find_value_select"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:text="@string/value_select"
-            android:textColor="@color/black_33"
-            android:textSize="11dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_find_value_title"
-            tools:ignore="SpUsage" />
-
-        <View
-            android:id="@+id/view_find_value_select_underline"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/black_33"
-            app:layout_constraintEnd_toEndOf="@id/tv_find_value_select"
-            app:layout_constraintStart_toStartOf="@id/tv_find_value_select"
-            app:layout_constraintTop_toBottomOf="@id/tv_find_value_select" />
+        android:overScrollMode="never">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_find_values"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_find_value_title">
+            android:background="@color/white"
+            tools:context=".ui.find.FindFragment">
 
             <TextView
-                android:id="@+id/tv_find_empty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:lineSpacingExtra="8sp"
-                android:text="@string/find_empty"
-                android:textColor="@color/black_33"
-                android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SpUsage" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_find_value"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="42dp"
-                android:background="@drawable/border_white_fill_round_40"
-                android:backgroundTint="@color/purple_9980fa"
-                android:paddingHorizontal="44dp"
-                android:text="@string/find_value"
-                android:textColor="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_find_empty"
-                tools:ignore="SpUsage" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_find_my_value"
+                android:id="@+id/tv_find_value_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="22dp"
+                android:text="@string/find_value_title"
+                android:textColor="@color/gray_4f"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_find_value_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:text="@string/value_select"
+                android:textColor="@color/black_33"
+                android:textSize="11dp"
+                android:visibility="@{findViewModel.tempList == null ? View.GONE : View.VISIBLE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_find_value_title"
+                tools:ignore="SpUsage" />
+
+            <View
+                android:id="@+id/view_find_value_select_underline"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black_33"
+                app:layout_constraintEnd_toEndOf="@id/tv_find_value_select"
+                app:layout_constraintStart_toStartOf="@id/tv_find_value_select"
+                app:layout_constraintTop_toBottomOf="@id/tv_find_value_select" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_find_values"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_find_value_title">
+
+                <TextView
+                    android:id="@+id/tv_find_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="8sp"
+                    android:text="@string/find_empty"
+                    android:textColor="@color/black_33"
+                    android:textSize="14dp"
+                    android:visibility="@{findViewModel.tempList == null ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpUsage" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_find_value"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="42dp"
+                    android:background="@drawable/border_white_fill_round_40"
+                    android:backgroundTint="@color/purple_9980fa"
+                    android:paddingHorizontal="44dp"
+                    android:text="@string/find_value"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:visibility="@{findViewModel.tempList == null ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_find_empty"
+                    tools:ignore="SpUsage" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_find_my_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:visibility="@{findViewModel.tempList == null ? View.GONE : View.VISIBLE}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_find_my_value" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view_find_underline"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/gray_e0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_find_values" />
+
+            <TextView
+                android:id="@+id/tv_find_opponent_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                android:text="@string/find_opponent_title"
+                android:textColor="@color/gray_4f"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_find_underline"
+                tools:ignore="SpUsage" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_find_opponent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                app:layout_constraintBottom_toTopOf="@id/btn_find_opponent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_find_opponent_title">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_find_similarity"
+                    style="?android:attr/borderlessButtonStyle"
+                    isButtonChecked="@{findViewModel.isSimilarity}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:onClick="@{() -> findViewModel.selectSimilarity()}"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="40dp"
+                    android:text="@string/find_similarity"
+                    android:textColor="@color/black_33"
+                    android:textSize="12dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpUsage" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_find_complementary"
+                    style="?android:attr/borderlessButtonStyle"
+                    isButtonChecked="@{findViewModel.isComplementary}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center"
+                    android:onClick="@{() -> findViewModel.selectComplementary()}"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="40dp"
+                    android:text="@string/find_complementary"
+                    android:textColor="@color/black_33"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_find_similarity"
+                    app:layout_constraintStart_toEndOf="@id/btn_find_similarity"
+                    app:layout_constraintTop_toTopOf="@id/btn_find_similarity"
+                    tools:ignore="SpUsage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_find_opponent"
+                style="?android:attr/borderlessButtonStyle"
+                isComplementary="@{findViewModel.isComplementary}"
+                isSimilarity="@{findViewModel.isSimilarity}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/border_white_fill_round_25"
+                android:gravity="center"
+                android:text="@string/find_bang"
+                android:textColor="@color/white"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/item_find_my_value" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <View
-            android:id="@+id/view_find_underline"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/gray_e0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layout_find_values" />
-
-        <TextView
-            android:id="@+id/tv_find_opponent_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="22dp"
-            android:text="@string/find_opponent_title"
-            android:textColor="@color/gray_4f"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_find_underline"
-            tools:ignore="SpUsage" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_find_opponent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="30dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_find_opponent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_find_opponent_title">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_find_similarity"
-                style="?android:attr/borderlessButtonStyle"
-                isButtonChecked="@{findViewModel.isSimilarity}"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:onClick="@{() -> findViewModel.selectSimilarity()}"
-                android:paddingHorizontal="30dp"
-                android:paddingVertical="40dp"
-                android:text="@string/find_similarity"
-                android:textColor="@color/black_33"
-                android:textSize="12dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SpUsage" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_find_complementary"
-                style="?android:attr/borderlessButtonStyle"
-                isButtonChecked="@{findViewModel.isComplementary}"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="20dp"
-                android:gravity="center"
-                android:onClick="@{() -> findViewModel.selectComplementary()}"
-                android:paddingHorizontal="30dp"
-                android:paddingVertical="40dp"
-                android:text="@string/find_complementary"
-                android:textColor="@color/black_33"
-                android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_find_similarity"
-                app:layout_constraintStart_toEndOf="@id/btn_find_similarity"
-                app:layout_constraintTop_toTopOf="@id/btn_find_similarity"
                 tools:ignore="SpUsage" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_find_opponent"
-            style="?android:attr/borderlessButtonStyle"
-            isComplementary="@{findViewModel.isComplementary}"
-            isSimilarity="@{findViewModel.isSimilarity}"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/border_white_fill_round_25"
-            android:gravity="center"
-            android:text="@string/find_bang"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpUsage" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
