@@ -48,7 +48,7 @@ class FindFragment : Fragment() {
 
     private fun setAdapter() {
         binding.rvFindMyValue.adapter = FindMyValueAdapter()
-        findViewModel.setTempList()
+        // findViewModel.setTempList()
     }
 
     private fun setTempList() {

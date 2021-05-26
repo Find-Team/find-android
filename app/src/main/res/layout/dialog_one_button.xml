@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tv_basic_title"
+        android:id="@+id/tv_one_button_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="71dp"
@@ -20,7 +20,7 @@
         tools:ignore="SpUsage" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_basic_dialog"
+        android:id="@+id/btn_one_button_dialog"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_basic_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_one_button_title"
         tools:ignore="SpUsage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
