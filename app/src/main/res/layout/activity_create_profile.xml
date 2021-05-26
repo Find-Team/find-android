@@ -104,93 +104,18 @@
                     app:layout_constraintTop_toTopOf="@id/title_cp_image"
                     tools:ignore="SpUsage" />
 
-                <HorizontalScrollView
-                    android:id="@+id/layout_cp_image"
-                    android:layout_width="match_parent"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_profile_picture"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="@id/tv_cp_image_guide"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_cp_image_explain">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/img_cp_first"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="8dp"
-                            android:src="@drawable/btn_add_image"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="ContentDescription" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/mark_profile_main_image"
-                            app:layout_constraintStart_toStartOf="@id/img_cp_first"
-                            app:layout_constraintTop_toTopOf="@id/img_cp_first"
-                            tools:ignore="ContentDescription" />
-
-                        <ImageView
-                            android:id="@+id/img_cp_second"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:src="@drawable/btn_add_image"
-                            app:layout_constraintStart_toEndOf="@id/img_cp_first"
-                            app:layout_constraintTop_toTopOf="@id/img_cp_first"
-                            tools:ignore="ContentDescription" />
-
-                        <ImageView
-                            android:id="@+id/img_cp_third"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:src="@drawable/btn_add_image"
-                            app:layout_constraintStart_toEndOf="@id/img_cp_second"
-                            app:layout_constraintTop_toTopOf="@id/img_cp_first"
-                            tools:ignore="ContentDescription" />
-
-                        <ImageView
-                            android:id="@+id/img_cp_fourth"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:src="@drawable/btn_profile_optional_image"
-                            android:visibility="gone"
-                            app:layout_constraintStart_toEndOf="@id/img_cp_third"
-                            app:layout_constraintTop_toTopOf="@id/img_cp_first"
-                            tools:ignore="ContentDescription" />
-
-                        <ImageView
-                            android:id="@+id/img_cp_fifth"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:src="@drawable/btn_profile_optional_image"
-                            android:visibility="gone"
-                            app:layout_constraintStart_toEndOf="@id/img_cp_fourth"
-                            app:layout_constraintTop_toTopOf="@id/img_cp_first"
-                            tools:ignore="ContentDescription" />
-
-                        <ImageView
-                            android:id="@+id/img_cp_sixth"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="8dp"
-                            android:src="@drawable/btn_profile_optional_image"
-                            android:visibility="gone"
-                            app:layout_constraintStart_toEndOf="@id/img_cp_fifth"
-                            app:layout_constraintTop_toTopOf="@id/img_cp_first"
-                            tools:ignore="ContentDescription" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </HorizontalScrollView>
+                    app:layout_constraintTop_toBottomOf="@id/tv_cp_image_explain"
+                    tools:listitem="@layout/item_photo" />
 
                 <RelativeLayout
                     android:id="@+id/layout_cp_image_prev"
@@ -200,16 +125,16 @@
                     android:layout_marginTop="24dp"
                     android:background="@drawable/border_white_fill_round_10"
                     android:backgroundTint="@color/gray_f2"
-                    app:layout_constraintBottom_toTopOf="@id/title_cp_identity"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/layout_cp_image">
+                    app:layout_constraintTop_toBottomOf="@id/rv_profile_picture">
 
                     <ImageView
                         android:id="@+id/img_cp_image_prev"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:scaleType="fitXY"
                         tools:ignore="ContentDescription" />
 
                     <TextView
