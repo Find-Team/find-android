@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import find.ui.databinding.FragmentMyPageBinding
-import find.ui.ui.dialog.CreateProfileDialog
+import find.ui.ui.dialog.OneButtonDialog
 import find.ui.ui.interview.InterviewActivity
 import find.ui.util.autoCleared
 
@@ -26,8 +26,9 @@ class MyPageFragment : Fragment() {
     }
 
     private fun startDialog() {
-        val dialog = CreateProfileDialog(requireContext())
-        dialog.showDialog()
+        OneButtonDialog(0) {
+            startActivity(Intent(requireContext(), MyPageActivity::class.java))
+        }.show(childFragmentManager, OneButtonDialog.TAG)
     }
 
     private fun goToInterview() {
