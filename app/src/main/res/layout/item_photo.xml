@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="picture"
+            type="find.ui.ui.picture.ProfilePicture" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -10,22 +16,22 @@
 
         <ImageView
             android:id="@+id/img_profile_picture"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@drawable/border_purple99_line_purple7d_round_10"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/btn_add_image"
+            android:background="@drawable/border_purple99_line_purple7d_round_10"
             android:scaleType="fitXY"
+            android:src="@drawable/btn_add_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/img_profile_picture_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
             android:src="@drawable/mark_profile_main_image"
+            android:visibility="invisible"
             app:layout_constraintStart_toStartOf="@id/img_profile_picture"
             app:layout_constraintTop_toTopOf="@id/img_profile_picture"
             tools:ignore="ContentDescription" />
