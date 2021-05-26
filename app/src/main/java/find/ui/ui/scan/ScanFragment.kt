@@ -33,7 +33,9 @@ class ScanFragment : Fragment() {
             override fun createFragment(position: Int): Fragment {
                 return when (position) {
                     0 -> FindFragment()
-                    1 -> FoundFragment()
+                    1 -> FoundFragment() {
+                        binding.vpScan.currentItem = 0
+                    }
                     else -> throw IndexOutOfBoundsException()
                 }
             }
