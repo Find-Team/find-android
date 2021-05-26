@@ -88,9 +88,6 @@
     <string name="find_similarity">나와\n닮은 점이\n많은 사람을 원해요!\n(상호 유사성)</string>
     <string name="find_bang">FIND!</string>
 
-    <!-- Found -->
-    <string name="found_not_find">FIND 버튼을 눌러\n상대를 먼저 검색하세요!</string>
-
     <!-- Values -->
     <string name="value_question">가치관 문답</string>
     <string name="value_select">가치관 선택</string>
@@ -114,9 +111,16 @@
     <string name="answer_what_value">어떤 가치관을 기준으로 매칭되었을까요?</string>
     <string name="answer_opponent_value">상대는 어떤 사람일까요, 확인해 보세요 :)</string>
 
+    <!-- Dialog -->
+    <string name="found_not_find">FIND 버튼을 눌러\n상대를 먼저 검색하세요!</string>
+    <string name="would_you_like_to_save">저장하시겠습니까?</string>
+    <string name="dialog_disconnect_title">상대와의 연결을 해제합니다.</string>
+    <string name="dialog_disconnect_content">연결된 상대에서 리스트가 사라집니다.</string>
+
     <!-- AnyWhere -->
     <string name="complete">완료</string>
     <string name="save">저장</string>
     <string name="confirm">확인</string>
-
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
 </resources>
