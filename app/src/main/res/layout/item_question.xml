@@ -50,50 +50,69 @@
             app:layout_constraintTop_toBottomOf="@id/tv_question_item_title"
             tools:ignore="SpUsage" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_answer_one"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/item_question_chip_group"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
-            android:background="@drawable/border_purple_line_round_25"
-            android:paddingHorizontal="15dp"
-            android:text="@{question.firstAnswer}"
-            android:textColor="@color/purple_7d5fff"
-            android:textSize="14dp"
+            app:chipSpacingHorizontal="300dp"
+            app:chipSpacingVertical="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_question_title"
             app:layout_constraintTop_toBottomOf="@id/tv_question_title"
-            tools:ignore="SpUsage" />
+            app:singleSelection="true">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_answer_two"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/border_gray_line_round_25"
-            android:paddingHorizontal="15dp"
-            android:text="@{question.secondAnswer}"
-            android:textColor="@color/gray_4f"
-            android:textSize="14dp"
-            app:layout_constraintStart_toStartOf="@id/tv_question_title"
-            app:layout_constraintTop_toBottomOf="@id/btn_answer_one"
-            tools:ignore="SpUsage" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_answer_one"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{question.firstAnswer}"
+                android:textColor="@color/selector_question_chip"
+                android:textSize="14dp"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="25dp"
+                app:chipEndPadding="16dp"
+                app:chipMinHeight="40dp"
+                app:chipStartPadding="16dp"
+                app:chipStrokeColor="@color/selector_question_chip"
+                app:chipStrokeWidth="1dp"
+                tools:ignore="SpUsage" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_answer_three"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/border_gray_line_round_25"
-            android:paddingHorizontal="15dp"
-            android:text="@{question.thirdAnswer}"
-            android:textColor="@color/gray_4f"
-            android:textSize="14dp"
-            app:layout_constraintStart_toStartOf="@id/tv_question_title"
-            app:layout_constraintTop_toBottomOf="@id/btn_answer_two"
-            tools:ignore="SpUsage" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_answer_two"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{question.secondAnswer}"
+                android:textColor="@color/selector_question_chip"
+                android:textSize="14dp"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="25dp"
+                app:chipEndPadding="16dp"
+                app:chipMinHeight="40dp"
+                app:chipStartPadding="16dp"
+                app:chipStrokeColor="@color/selector_question_chip"
+                app:chipStrokeWidth="1dp"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_answer_three"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{question.thirdAnswer}"
+                android:textColor="@color/selector_question_chip"
+                android:textSize="14dp"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="25dp"
+                app:chipEndPadding="16dp"
+                app:chipMinHeight="40dp"
+                app:chipStartPadding="16dp"
+                app:chipStrokeColor="@color/selector_question_chip"
+                app:chipStrokeWidth="1dp"
+                tools:ignore="SpUsage" />
+        </com.google.android.material.chip.ChipGroup>
 
         <TextView
             setPositionText="@{position+1}"
@@ -106,7 +125,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_answer_three"
+            app:layout_constraintTop_toBottomOf="@id/item_question_chip_group"
             tools:ignore="SpUsage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
