@@ -14,6 +14,7 @@ import find.ui.R
 import find.ui.databinding.ActivityCreateProfileBinding
 import find.ui.ui.dialog.InfoDialog
 import find.ui.ui.dialog.PickerDialog
+import find.ui.ui.dialog.PictureDialog
 import find.ui.ui.picture.PictureAdapter
 import find.ui.ui.picture.PictureViewModel
 import find.ui.ui.profile.ProfileGuideActivity
@@ -120,10 +121,16 @@ class MyPageActivity : AppCompatActivity() {
         }
     }
 
+    private fun clickAddImage() {
+        val dialog = PictureDialog()
+        dialog.show(supportFragmentManager, DIALOG_TAG)
+    }
+
     private fun setAdapter() {
         binding.rvProfilePicture.adapter = PictureAdapter() { pic, pos ->
             viewModel.itemPos.value = pos
             viewModel.itemImage.value = pic.image
+            clickAddImage()
         }
         viewModel.setDefaultPicture()
     }

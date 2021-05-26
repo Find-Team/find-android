@@ -65,6 +65,11 @@
     <string name="title_not_recommend">추천하지 않는 사진</string>
     <string name="title_recommend">추천하는 사진</string>
 
+    <!-- Profile Picture Dialog -->
+    <string name="dialog_picture_title">프로필 사진 추가</string>
+    <string name="dialog_picture_get">앨범에서 가져오기</string>
+    <string name="dialog_picture_cancel">취소</string>
+
     <!-- Interview -->
     <string name="interview_title">인터뷰</string>
     <string name="interview_explain">상대에게 당신을 좀 더 알려주세요!</string>
