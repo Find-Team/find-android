@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_white_fill_round_10"
+    tools:context=".ui.dialog.PictureDialog">
+
+    <TextView
+        android:id="@+id/title_picture_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_picture_title"
+        android:textSize="20dp"
+        android:textColor="@color/black_33"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpUsage" />
+
+    <View
+        android:id="@+id/line1_picture_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_e0"
+        app:layout_constraintTop_toBottomOf="@id/title_picture_dialog"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/tv_picture_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_picture_get"
+        android:textSize="18dp"
+        android:textColor="@color/purple_7d5fff"
+        app:layout_constraintTop_toBottomOf="@id/line1_picture_dialog"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpUsage" />
+
+    <View
+        android:id="@+id/line2_picture_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_e0"
+        app:layout_constraintTop_toBottomOf="@id/tv_picture_get"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="19dp" />
+
+    <TextView
+        android:id="@+id/tv_picture_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_picture_cancel"
+        android:textSize="18dp"
+        android:textColor="@color/purple_7d5fff"
+        app:layout_constraintTop_toBottomOf="@id/line2_picture_dialog"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpUsage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
