@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import find.ui.R
 import find.ui.databinding.FragmentFindBinding
+import find.ui.ui.dialog.SearchDialog
 import find.ui.ui.values.ValuesActivity
 import find.ui.util.autoCleared
 
@@ -25,6 +27,7 @@ class FindFragment : Fragment() {
         binding.lifecycleOwner = this@FindFragment
         startQuestionFragment()
         startSelectFragment()
+        startSearchFind()
         setAdapter()
         setTempList()
         return binding.root
@@ -48,12 +51,30 @@ class FindFragment : Fragment() {
 
     private fun setAdapter() {
         binding.rvFindMyValue.adapter = FindMyValueAdapter()
-        // findViewModel.setTempList()
+        findViewModel.setTempList()
     }
 
     private fun setTempList() {
         findViewModel.tempList.observe(viewLifecycleOwner) {
             (binding.rvFindMyValue.adapter as FindMyValueAdapter).submitList(it)
+        }
+    }
+
+    private fun startSearchFind() {
+        binding.btnFindOpponent.setOnClickListener {
+            if (requireNotNull(findViewModel.isFindButtonActive.value)) {
+                if (requireNotNull(findViewModel.isComplementary.value)) {
+                    SearchDialog(getString(R.string.search_complementary)).show(
+                        childFragmentManager,
+                        SearchDialog.TAG
+                    )
+                } else if (requireNotNull(findViewModel.isSimilarity.value)) {
+                    SearchDialog(getString(R.string.search_similarity)).show(
+                        childFragmentManager,
+                        SearchDialog.TAG
+                    )
+                }
+            }
         }
     }
 }

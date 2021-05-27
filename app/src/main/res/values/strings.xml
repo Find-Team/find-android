@@ -107,7 +107,8 @@
 
     <!-- Search -->
     <string name="search_title">검색중...</string>
-    <string name="search_content">당신과 닮은 점이\n많은 사람을\n찾고있어요...!</string>
+    <string name="search_complementary">당신과 다르기에\n매력적인 사람을\n찾고 있어요...</string>
+    <string name="search_similarity">당신과 닮은 점이\n많은 사람을\n찾고있어요...!</string>
 
     <!-- Answer -->
     <string name="answer_title">당신과 다르기에 더욱 매력적인</string>
