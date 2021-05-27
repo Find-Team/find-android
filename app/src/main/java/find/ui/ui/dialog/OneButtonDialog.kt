@@ -9,7 +9,11 @@ import find.ui.R
 import find.ui.databinding.DialogOneButtonBinding
 import find.ui.util.autoCleared
 
-class OneButtonDialog(private val from: Int, private val onClick: () -> Unit) : DialogFragment() {
+class OneButtonDialog(
+    private val title: String,
+    private val content: String,
+    private val onClick: () -> Unit
+) : DialogFragment() {
     var binding by autoCleared<DialogOneButtonBinding>()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -23,7 +27,7 @@ class OneButtonDialog(private val from: Int, private val onClick: () -> Unit) : 
 
     override fun onStart() {
         super.onStart()
-        whereFrom()
+        setText()
         setClickListener()
     }
 
@@ -41,22 +45,9 @@ class OneButtonDialog(private val from: Int, private val onClick: () -> Unit) : 
         }
     }
 
-    private fun whereFrom() {
-        when (from) {
-            0 -> setText(
-                requireContext().getString(R.string.create_profile_guide),
-                requireContext().getString(R.string.create_profile_button)
-            )
-            1 -> setText(
-                requireContext().getString(R.string.found_not_find),
-                requireContext().getString(R.string.confirm)
-            )
-        }
-    }
-
-    private fun setText(title: String, buttonText: String) {
+    private fun setText() {
         binding.tvOneButtonTitle.text = title
-        binding.btnOneButtonDialog.text = buttonText
+        binding.btnOneButtonDialog.text = content
     }
 
     private fun setClickListener() {

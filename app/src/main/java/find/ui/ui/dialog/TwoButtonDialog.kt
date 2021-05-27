@@ -9,7 +9,11 @@ import find.ui.R
 import find.ui.databinding.DialogTwoButtonBinding
 import find.ui.util.autoCleared
 
-class TwoButtonDialog(private val from: Int, private val onClick: () -> Unit) : DialogFragment() {
+class TwoButtonDialog(
+    private val title: String,
+    private val content: String,
+    private val onClick: () -> Unit
+) : DialogFragment() {
     var binding by autoCleared<DialogTwoButtonBinding>()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -23,7 +27,7 @@ class TwoButtonDialog(private val from: Int, private val onClick: () -> Unit) : 
 
     override fun onStart() {
         super.onStart()
-        whereFrom()
+        setText()
         setClickListener()
     }
 
@@ -41,20 +45,7 @@ class TwoButtonDialog(private val from: Int, private val onClick: () -> Unit) : 
         }
     }
 
-    private fun whereFrom() {
-        when (from) {
-            0 -> setText(
-                requireContext().getString(R.string.would_you_like_to_save),
-                ""
-            )
-            1 -> setText(
-                requireContext().getString(R.string.dialog_disconnect_title),
-                requireContext().getString(R.string.dialog_disconnect_content)
-            )
-        }
-    }
-
-    private fun setText(title: String, content: String) {
+    private fun setText() {
         binding.tvTwoButtonTitle.text = title
         binding.tvTwoButtonContent.text = content
     }

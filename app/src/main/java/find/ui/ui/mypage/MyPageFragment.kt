@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import find.ui.R
 import find.ui.databinding.FragmentMyPageBinding
 import find.ui.ui.dialog.OneButtonDialog
 import find.ui.ui.interview.InterviewActivity
@@ -26,7 +27,10 @@ class MyPageFragment : Fragment() {
     }
 
     private fun startDialog() {
-        OneButtonDialog(0) {
+        OneButtonDialog(
+            getString(R.string.create_profile_guide),
+            getString(R.string.create_profile_button)
+        ) {
             startActivity(Intent(requireContext(), MyPageActivity::class.java))
         }.show(childFragmentManager, OneButtonDialog.TAG)
     }
