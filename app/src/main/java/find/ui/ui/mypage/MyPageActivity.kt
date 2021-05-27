@@ -124,8 +124,8 @@ class MyPageActivity : AppCompatActivity() {
     }
 
     private fun clickAddImage() {
-        val dialog = PictureDialog()
-        dialog.show(supportFragmentManager, DIALOG_TAG)
+        val dialog = PictureDialog("Profile")
+        dialog.show(supportFragmentManager, PictureDialog.PICTURE_TAG)
     }
 
     private fun initGetContent() {

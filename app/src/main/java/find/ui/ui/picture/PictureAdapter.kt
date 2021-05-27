@@ -11,7 +11,6 @@ import find.ui.databinding.ItemPhotoBinding
 
 class PictureAdapter(private val itemClick: (ProfilePicture, Int) -> Unit) :
     ListAdapter<ProfilePicture, PictureAdapter.PictureViewHolder>(PictureDiffUtil()) {
-    var items = listOf<ProfilePicture>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         PictureViewHolder(
