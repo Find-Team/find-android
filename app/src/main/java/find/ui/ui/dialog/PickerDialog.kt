@@ -3,6 +3,7 @@ package find.ui.ui.dialog
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.NumberPicker
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
@@ -11,7 +12,6 @@ import find.ui.databinding.DialogPickerBinding
 import find.ui.ui.mypage.MyPageActivity
 import find.ui.ui.profile.ProfileViewModel
 import find.ui.util.autoCleared
-import find.ui.util.dialogResize
 
 class PickerDialog(private val from: Int) : DialogFragment() {
     var binding by autoCleared<DialogPickerBinding>()
@@ -25,14 +25,22 @@ class PickerDialog(private val from: Int) : DialogFragment() {
         return activity?.let {
             val dialog = AlertDialog.Builder(it).create()
             dialog.setView(binding.root)
-            dialog.window?.setBackgroundDrawableResource(R.drawable.border_white_fill_round_10)
             dialog
         } ?: throw IllegalStateException()
     }
 
     override fun onResume() {
         super.onResume()
-        context?.dialogResize(this, 0.6f, 0.3f)
+        requireNotNull(dialog).apply {
+            requireNotNull(window).apply {
+                setLayout(
+                    (resources.displayMetrics.widthPixels * 0.6).toInt(),
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+                setBackgroundDrawableResource(R.drawable.border_white_fill_round_10)
+            }
+            setCancelable(false)
+        }
     }
 
     private fun pickerStyle() {
