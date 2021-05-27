@@ -11,6 +11,7 @@ import find.ui.databinding.ItemPhotoBinding
 
 class PictureAdapter(private val itemClick: (ProfilePicture, Int) -> Unit) :
     ListAdapter<ProfilePicture, PictureAdapter.PictureViewHolder>(PictureDiffUtil()) {
+    var items = listOf<ProfilePicture>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         PictureViewHolder(
@@ -18,36 +19,37 @@ class PictureAdapter(private val itemClick: (ProfilePicture, Int) -> Unit) :
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ),
-            itemClick
+            )
         )
 
-    override fun onBindViewHolder(holder: PictureViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: PictureViewHolder, position: Int) {
         holder.bind(getItem(position))
+        holder.onClick(getItem(position), itemClick)
+    }
+
+    fun changeItem(position: Int, uri: Uri) {
+        getItem(position).image = uri
+        notifyItemChanged(position)
+    }
 
     class PictureViewHolder(
-        private val binding: ItemPhotoBinding,
-        private val itemClick: (ProfilePicture, Int) -> Unit
-    ) :
-        RecyclerView.ViewHolder(binding.root) {
+        private val binding: ItemPhotoBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(picture: ProfilePicture) {
             binding.setVariable(BR.picture, picture)
-
-            binding.imgProfilePicture.setOnClickListener {
-                itemClick.invoke(picture, adapterPosition)
-            }
+            binding.imgProfilePicture.clipToOutline = true
         }
 
-        fun setImage(uri: Uri) {
-            binding.imgProfilePicture.clipToOutline = true
-            binding.imgProfilePicture.setPadding(2, 2, 2, 2)
-            binding.imgProfilePicture.setImageURI(uri)
+        fun onClick(pic: ProfilePicture, itemClick: (ProfilePicture, Int) -> Unit) {
+            binding.imgProfilePicture.setOnClickListener {
+                itemClick.invoke(pic, adapterPosition)
+            }
         }
     }
 
     private class PictureDiffUtil : DiffUtil.ItemCallback<ProfilePicture>() {
         override fun areItemsTheSame(oldItem: ProfilePicture, newItem: ProfilePicture) =
-            oldItem == newItem
+            oldItem.image == newItem.image
 
         override fun areContentsTheSame(oldItem: ProfilePicture, newItem: ProfilePicture) =
             oldItem == newItem

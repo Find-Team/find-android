@@ -24,6 +24,7 @@ class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateProfileBinding
     private var from by Delegates.notNull<Int>()
     private lateinit var startActivityResult: ActivityResultLauncher<Intent>
+    private lateinit var getContent: ActivityResultLauncher<String>
     private val viewModel: PictureViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +32,10 @@ class MyPageActivity : AppCompatActivity() {
         binding = ActivityCreateProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.profileActivity = this
-        initActivityForResult()
         setAdapter()
         setPictureList()
+        initActivityForResult()
+        initGetContent()
     }
 
     fun showPickerDialog(view: View) {
@@ -126,10 +128,24 @@ class MyPageActivity : AppCompatActivity() {
         dialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
+    private fun initGetContent() {
+        getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            binding.imgCpImagePrev.setImageURI(uri)
+            binding.tvCpImagePrev.visibility = View.INVISIBLE
+            (binding.rvProfilePicture.adapter as PictureAdapter).changeItem(
+                viewModel.itemPos.value!!.toInt(), uri
+            )
+        }
+    }
+
+    fun selectImage() {
+        getContent.launch("image/*")
+    }
+
     private fun setAdapter() {
         binding.rvProfilePicture.adapter = PictureAdapter() { pic, pos ->
             viewModel.itemPos.value = pos
-            viewModel.itemImage.value = pic.image
+            viewModel.itemPicture.value = pic
             clickAddImage()
         }
         viewModel.setDefaultPicture()
