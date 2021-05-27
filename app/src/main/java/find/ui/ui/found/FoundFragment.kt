@@ -19,6 +19,10 @@ class FoundFragment(private val isNotFind: () -> Unit) : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        OneButtonDialog(1, isNotFind).show(childFragmentManager, OneButtonDialog.TAG)
+        OneButtonDialog(
+            getString(R.string.found_not_find),
+            getString(R.string.confirm),
+            isNotFind
+        ).show(childFragmentManager, OneButtonDialog.TAG)
     }
 }
