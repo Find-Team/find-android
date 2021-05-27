@@ -8,7 +8,7 @@ import find.ui.R
 import find.ui.databinding.DialogSearchBinding
 import find.ui.util.autoCleared
 
-class SearchDialog : DialogFragment() {
+class SearchDialog(private val content: String) : DialogFragment() {
     var binding by autoCleared<DialogSearchBinding>()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -19,5 +19,18 @@ class SearchDialog : DialogFragment() {
             builder.setView(binding.root)
             builder.create()
         } ?: throw IllegalStateException()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setText()
+    }
+
+    private fun setText() {
+        binding.tvSearchContent.text = content
+    }
+
+    companion object {
+        const val TAG = "SEARCH_DIALOG"
     }
 }
