@@ -1,16 +1,30 @@
 package find.ui.ui.dialog
 
+import android.Manifest.permission.READ_EXTERNAL_STORAGE
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
 import find.ui.R
 import find.ui.databinding.DialogPictureBinding
+import find.ui.ui.mypage.MyPageActivity
 import find.ui.util.autoCleared
 
 class PictureDialog : DialogFragment() {
     var binding by autoCleared<DialogPictureBinding>()
+
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            (requireActivity() as MyPageActivity).selectImage()
+        } else {
+            Toast.makeText(requireContext(), "권한을 승인해주세요", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = DialogPictureBinding.inflate(requireActivity().layoutInflater)
@@ -18,6 +32,7 @@ class PictureDialog : DialogFragment() {
             val dialog = AlertDialog.Builder(it).create()
             dialog.setView(binding.root)
             onClickCancel()
+            onClickGet()
             dialog
         } ?: throw IllegalStateException()
     }
@@ -38,6 +53,13 @@ class PictureDialog : DialogFragment() {
 
     private fun onClickCancel() {
         binding.tvPictureCancel.setOnClickListener {
+            dismiss()
+        }
+    }
+
+    private fun onClickGet() {
+        binding.tvPictureGet.setOnClickListener {
+            requestPermissionLauncher.launch(READ_EXTERNAL_STORAGE)
             dismiss()
         }
     }
