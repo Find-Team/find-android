@@ -1,15 +1,25 @@
 package find.ui.ui.interview
 
 import android.os.Bundle
+import android.view.View
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import find.ui.R
 import find.ui.databinding.ActivityInterviewBinding
+import find.ui.ui.dialog.PictureDialog
+import find.ui.ui.picture.PictureAdapter
+import find.ui.ui.picture.PictureViewModel
 
 class InterviewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInterviewBinding
+    private lateinit var getContent: ActivityResultLauncher<String>
+    private val viewModel: PictureViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInterviewBinding.inflate(layoutInflater)
@@ -17,6 +27,9 @@ class InterviewActivity : AppCompatActivity() {
 
         initValuesViewPager()
         initValuesTabLayout()
+        setAdapter()
+        setPictureList()
+        initGetContent()
     }
 
     private fun initValuesTabLayout() {
@@ -51,4 +64,46 @@ class InterviewActivity : AppCompatActivity() {
         Interview("잘하는 것 & 특기", ""),
         Interview("가지고 있는 것 & 자랑거리", "")
     )
+
+    private fun setAdapter() {
+        binding.rvInterviewPhoto.adapter = PictureAdapter() { pic, pos ->
+            viewModel.itemPos.value = pos
+            viewModel.itemPicture.value = pic
+            clickAddImage()
+        }
+        viewModel.setDefaultPicture()
+    }
+
+    private fun setPictureList() {
+        viewModel.pictureList.observe(this) { items ->
+            (binding.rvInterviewPhoto.adapter as PictureAdapter).submitList(items)
+        }
+    }
+
+    private fun clickAddImage() {
+        val dialog = PictureDialog("Interview")
+        dialog.show(supportFragmentManager, DIALOG_TAG)
+    }
+
+    private fun initGetContent() {
+        getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            binding.imgInterviewPrev.setImageURI(uri)
+            binding.tvInterviewPrev.visibility = View.INVISIBLE
+            (binding.rvInterviewPhoto.adapter as PictureAdapter).changeItem(
+                viewModel.itemPos.value!!.toInt(), uri
+            )
+        }
+    }
+
+    fun selectImage() {
+        getContent.launch("image/*")
+    }
+
+    fun finishInterview() {
+        finish()
+    }
+
+    companion object {
+        const val DIALOG_TAG = "Dialog"
+    }
 }

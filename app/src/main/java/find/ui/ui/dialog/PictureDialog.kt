@@ -10,17 +10,21 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
 import find.ui.R
 import find.ui.databinding.DialogPictureBinding
+import find.ui.ui.interview.InterviewActivity
 import find.ui.ui.mypage.MyPageActivity
 import find.ui.util.autoCleared
 
-class PictureDialog : DialogFragment() {
+class PictureDialog(from: String) : DialogFragment() {
     var binding by autoCleared<DialogPictureBinding>()
 
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
-            (requireActivity() as MyPageActivity).selectImage()
+            when (from) {
+                "Profile"-> (requireActivity() as MyPageActivity).selectImage()
+                "Interview" -> (requireActivity() as InterviewActivity).selectImage()
+            }
         } else {
             Toast.makeText(requireContext(), "권한을 승인해주세요", Toast.LENGTH_SHORT).show()
         }
@@ -62,5 +66,9 @@ class PictureDialog : DialogFragment() {
             requestPermissionLauncher.launch(READ_EXTERNAL_STORAGE)
             dismiss()
         }
+    }
+
+    companion object {
+        const val PICTURE_TAG = "PICTURE_DIALOG"
     }
 }
