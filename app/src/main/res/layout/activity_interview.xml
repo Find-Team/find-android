@@ -137,8 +137,6 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="41dp"
-                    android:background="@drawable/border_white_fill_round_10"
-                    android:backgroundTint="@color/gray_f2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -150,6 +148,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
+                        android:background="@drawable/border_white_fill_round_10"
+                        android:backgroundTint="@color/gray_f2"
                         tools:ignore="ContentDescription" />
 
                     <TextView
