@@ -131,6 +131,12 @@
     <string name="matching_feeling">호감</string>
     <string name="matching_dibs">찜</string>
 
+    <!-- Dibs -->
+    <string name="dibs_me_title">나를 찜한 사람</string>
+    <string name="dibe_me_empty">나를 찜한 사람이 없어요!</string>
+    <string name="dibs_my_title">내가 찜한 사람</string>
+    <string name="dibs_my_empty">내가 찜한 사람이 없어요!</string>
+
     <!-- AnyWhere -->
     <string name="complete">완료</string>
     <string name="save">저장</string>
