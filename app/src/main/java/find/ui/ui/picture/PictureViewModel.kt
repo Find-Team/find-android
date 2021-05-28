@@ -16,12 +16,28 @@ class PictureViewModel : ViewModel() {
 
     fun setDefaultPicture() {
         list = arrayListOf(
-            ProfilePicture(false, getUriResource(R.drawable.btn_add_image)),
+            ProfilePicture(true, getUriResource(R.drawable.btn_add_image)),
             ProfilePicture(false, getUriResource(R.drawable.btn_add_image)),
             ProfilePicture(false, getUriResource(R.drawable.btn_add_image))
         )
         _pictureList.value = list
     }
+
+    fun add(position: Int, image: Uri) {
+        if (checkMain(itemPicture.value!!)) {
+            list.add(position, ProfilePicture(true, image))
+        } else {
+            list.add(position, ProfilePicture(false, image))
+        }
+        _pictureList.value = list
+    }
+
+    fun remove(position: Int) {
+        list.removeAt(position)
+        _pictureList.value = list
+    }
+
+    private fun checkMain(picture: ProfilePicture): Boolean = picture.main
 
     private fun getUriResource(resId: Int): Uri =
         Uri.parse("android.resource://find.ui/$resId")

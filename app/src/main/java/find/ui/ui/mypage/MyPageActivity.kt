@@ -12,9 +12,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import find.ui.R
 import find.ui.databinding.ActivityCreateProfileBinding
+import find.ui.ui.dialog.AddPictureDialog
 import find.ui.ui.dialog.InfoDialog
 import find.ui.ui.dialog.PickerDialog
-import find.ui.ui.dialog.PictureDialog
 import find.ui.ui.picture.PictureAdapter
 import find.ui.ui.picture.PictureViewModel
 import find.ui.ui.profile.ProfileGuideActivity
@@ -124,14 +124,17 @@ class MyPageActivity : AppCompatActivity() {
     }
 
     private fun clickAddImage() {
-        val dialog = PictureDialog("Profile")
-        dialog.show(supportFragmentManager, PictureDialog.PICTURE_TAG)
+        val dialog = AddPictureDialog("Profile")
+        dialog.show(supportFragmentManager, AddPictureDialog.PICTURE_TAG)
     }
 
     private fun initGetContent() {
         getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             binding.imgCpImagePrev.setImageURI(uri)
+            binding.imgCpImagePrev.clipToOutline = true
             binding.tvCpImagePrev.visibility = View.INVISIBLE
+            viewModel.add(viewModel.itemPos.value!!.toInt(), uri)
+            viewModel.remove(viewModel.itemPos.value!!.toInt())
             (binding.rvProfilePicture.adapter as PictureAdapter).changeItem(
                 viewModel.itemPos.value!!.toInt(), uri
             )

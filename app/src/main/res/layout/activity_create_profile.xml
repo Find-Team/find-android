@@ -123,8 +123,6 @@
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="24dp"
-                    android:background="@drawable/border_white_fill_round_10"
-                    android:backgroundTint="@color/gray_f2"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -134,6 +132,8 @@
                         android:id="@+id/img_cp_image_prev"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@drawable/border_white_fill_round_10"
+                        android:backgroundTint="@color/gray_f2"
                         android:scaleType="fitXY"
                         tools:ignore="ContentDescription" />
 

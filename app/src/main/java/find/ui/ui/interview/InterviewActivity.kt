@@ -11,14 +11,13 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import find.ui.R
 import find.ui.databinding.ActivityInterviewBinding
-import find.ui.ui.dialog.PictureDialog
+import find.ui.ui.dialog.AddPictureDialog
 import find.ui.ui.picture.PictureAdapter
-import find.ui.ui.picture.PictureViewModel
 
 class InterviewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInterviewBinding
     private lateinit var getContent: ActivityResultLauncher<String>
-    private val viewModel: PictureViewModel by viewModels()
+    private val viewModel: InterviewViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,13 +80,14 @@ class InterviewActivity : AppCompatActivity() {
     }
 
     private fun clickAddImage() {
-        val dialog = PictureDialog("Interview")
+        val dialog = AddPictureDialog("Interview")
         dialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
     private fun initGetContent() {
         getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             binding.imgInterviewPrev.setImageURI(uri)
+            binding.imgInterviewPrev.clipToOutline = true
             binding.tvInterviewPrev.visibility = View.INVISIBLE
             (binding.rvInterviewPhoto.adapter as PictureAdapter).changeItem(
                 viewModel.itemPos.value!!.toInt(), uri

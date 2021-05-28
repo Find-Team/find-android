@@ -2,6 +2,7 @@ package find.ui.ui.picture
 
 import android.net.Uri
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -23,6 +24,7 @@ class PictureAdapter(private val itemClick: (ProfilePicture, Int) -> Unit) :
 
     override fun onBindViewHolder(holder: PictureViewHolder, position: Int) {
         holder.bind(getItem(position))
+        holder.setMainPicture(getItem(position))
         holder.onClick(getItem(position), itemClick)
     }
 
@@ -42,6 +44,14 @@ class PictureAdapter(private val itemClick: (ProfilePicture, Int) -> Unit) :
         fun onClick(pic: ProfilePicture, itemClick: (ProfilePicture, Int) -> Unit) {
             binding.imgProfilePicture.setOnClickListener {
                 itemClick.invoke(pic, adapterPosition)
+            }
+        }
+
+        fun setMainPicture(picture: ProfilePicture) {
+            if (picture.main) {
+                binding.imgProfilePictureMain.visibility = View.VISIBLE
+            } else {
+                binding.imgProfilePictureMain.visibility = View.INVISIBLE
             }
         }
     }

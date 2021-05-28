@@ -9,20 +9,20 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
 import find.ui.R
-import find.ui.databinding.DialogPictureBinding
+import find.ui.databinding.DialogAddPictureBinding
 import find.ui.ui.interview.InterviewActivity
 import find.ui.ui.mypage.MyPageActivity
 import find.ui.util.autoCleared
 
-class PictureDialog(from: String) : DialogFragment() {
-    var binding by autoCleared<DialogPictureBinding>()
+class AddPictureDialog(from: String) : DialogFragment() {
+    var binding by autoCleared<DialogAddPictureBinding>()
 
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
             when (from) {
-                "Profile"-> (requireActivity() as MyPageActivity).selectImage()
+                "Profile" -> (requireActivity() as MyPageActivity).selectImage()
                 "Interview" -> (requireActivity() as InterviewActivity).selectImage()
             }
         } else {
@@ -31,7 +31,7 @@ class PictureDialog(from: String) : DialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        binding = DialogPictureBinding.inflate(requireActivity().layoutInflater)
+        binding = DialogAddPictureBinding.inflate(requireActivity().layoutInflater)
         return activity?.let {
             val dialog = AlertDialog.Builder(it).create()
             dialog.setView(binding.root)
@@ -69,6 +69,6 @@ class PictureDialog(from: String) : DialogFragment() {
     }
 
     companion object {
-        const val PICTURE_TAG = "PICTURE_DIALOG"
+        const val PICTURE_TAG = "ADD_PICTURE_DIALOG"
     }
 }
