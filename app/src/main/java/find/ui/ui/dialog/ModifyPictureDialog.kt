@@ -38,6 +38,7 @@ class ModifyPictureDialog(private val onClick: () -> Unit) : DialogFragment() {
             onClickGet()
             mainDisabled()
             onClickMain()
+            onRemove()
             dialog
         } ?: throw IllegalStateException()
     }
@@ -82,6 +83,13 @@ class ModifyPictureDialog(private val onClick: () -> Unit) : DialogFragment() {
             if (!mainDisabled()) {
                 onClick()
             }
+            dismiss()
+        }
+    }
+
+    private fun onRemove() {
+        binding.tvPictureRemove.setOnClickListener {
+            (requireActivity() as MyPageActivity).removeImage()
             dismiss()
         }
     }
