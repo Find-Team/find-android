@@ -8,13 +8,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.activityViewModels
 import find.ui.R
 import find.ui.databinding.DialogModifyPictureBinding
 import find.ui.ui.mypage.MyPageActivity
+import find.ui.ui.picture.PictureViewModel
 import find.ui.util.autoCleared
 
-class ModifyPictureDialog : DialogFragment() {
+class ModifyPictureDialog(private val onClick: () -> Unit) : DialogFragment() {
     var binding by autoCleared<DialogModifyPictureBinding>()
+    private val viewModel by activityViewModels<PictureViewModel>()
 
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -33,6 +36,8 @@ class ModifyPictureDialog : DialogFragment() {
             dialog.setView(binding.root)
             onClickCancel()
             onClickGet()
+            mainDisabled()
+            onClickMain()
             dialog
         } ?: throw IllegalStateException()
     }
@@ -51,6 +56,14 @@ class ModifyPictureDialog : DialogFragment() {
         }
     }
 
+    private fun mainDisabled(): Boolean {
+        if (viewModel.checkMain(viewModel.itemPicture.value!!)) {
+            binding.tvPictureMain.setTextColor(binding.tvPictureMain.context.getColor(R.color.gray_82))
+            return true
+        }
+        return false
+    }
+
     private fun onClickCancel() {
         binding.tvPictureCancel.setOnClickListener {
             dismiss()
@@ -60,6 +73,15 @@ class ModifyPictureDialog : DialogFragment() {
     private fun onClickGet() {
         binding.tvPictureGet.setOnClickListener {
             requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+            dismiss()
+        }
+    }
+
+    private fun onClickMain() {
+        binding.tvPictureMain.setOnClickListener {
+            if (!mainDisabled()) {
+                onClick()
+            }
             dismiss()
         }
     }

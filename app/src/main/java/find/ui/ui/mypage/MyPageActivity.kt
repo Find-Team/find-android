@@ -130,7 +130,10 @@ class MyPageActivity : AppCompatActivity() {
     }
 
     fun clickModifyImage() {
-        val dialog = ModifyPictureDialog()
+        val dialog = ModifyPictureDialog() {
+            viewModel.setMainPicture()
+            (binding.rvProfilePicture.adapter as PictureAdapter).notifyDataSetChanged()
+        }
         dialog.show(supportFragmentManager, ModifyPictureDialog.PICTURE_TAG)
     }
 

@@ -37,7 +37,13 @@ class PictureViewModel : ViewModel() {
         _pictureList.value = list
     }
 
-    private fun checkMain(picture: ProfilePicture): Boolean = picture.main
+    fun setMainPicture() {
+        for (i in _pictureList.value!!.indices) {
+            _pictureList.value!![i].main = i == itemPos.value!!.toInt()
+        }
+    }
+
+    fun checkMain(picture: ProfilePicture): Boolean = picture.main
 
     private fun getUriResource(resId: Int): Uri =
         Uri.parse("android.resource://find.ui/$resId")
