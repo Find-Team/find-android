@@ -12,6 +12,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import find.ui.R
 import find.ui.databinding.ActivityInterviewBinding
 import find.ui.ui.dialog.AddPictureDialog
+import find.ui.ui.dialog.ModifyPictureDialog
 import find.ui.ui.picture.PictureAdapter
 
 class InterviewActivity : AppCompatActivity() {
@@ -84,11 +85,18 @@ class InterviewActivity : AppCompatActivity() {
         dialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
+    fun clickModifyImage() {
+        val dialog = ModifyPictureDialog()
+        dialog.show(supportFragmentManager, ModifyPictureDialog.PICTURE_TAG)
+    }
+
     private fun initGetContent() {
         getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             binding.imgInterviewPrev.setImageURI(uri)
             binding.imgInterviewPrev.clipToOutline = true
             binding.tvInterviewPrev.visibility = View.INVISIBLE
+            binding.tvInterviewModify.visibility = View.VISIBLE
+
             (binding.rvInterviewPhoto.adapter as PictureAdapter).changeItem(
                 viewModel.itemPos.value!!.toInt(), uri
             )
