@@ -144,8 +144,6 @@ class MyPageActivity : AppCompatActivity() {
             binding.tvCpImagePrev.visibility = View.INVISIBLE
             binding.tvCpImageModify.visibility = View.VISIBLE
 
-            viewModel.add(viewModel.itemPos.value!!.toInt(), uri)
-            viewModel.remove(viewModel.itemPos.value!!.toInt())
             (binding.rvProfilePicture.adapter as PictureAdapter).changeItem(
                 viewModel.itemPos.value!!.toInt(), uri
             )
@@ -169,6 +167,16 @@ class MyPageActivity : AppCompatActivity() {
         viewModel.pictureList.observe(this) { items ->
             (binding.rvProfilePicture.adapter as PictureAdapter).submitList(items)
         }
+    }
+
+    fun removeImage() {
+        (binding.rvProfilePicture.adapter as PictureAdapter).changeItem(
+            viewModel.itemPos.value!!.toInt(), viewModel.getUriResource(R.drawable.btn_add_image)
+        )
+        binding.imgCpImagePrev.setImageResource(R.drawable.border_white_fill_round_10)
+        binding.imgCpImagePrev.setColorFilter(binding.imgCpImagePrev.context.getColor(R.color.gray_f2))
+        binding.tvCpImagePrev.visibility = View.VISIBLE
+        binding.tvCpImageModify.visibility = View.INVISIBLE
     }
 
     companion object {

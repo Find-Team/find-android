@@ -23,20 +23,6 @@ class PictureViewModel : ViewModel() {
         _pictureList.value = list
     }
 
-    fun add(position: Int, image: Uri) {
-        if (checkMain(itemPicture.value!!)) {
-            list.add(position, ProfilePicture(true, image))
-        } else {
-            list.add(position, ProfilePicture(false, image))
-        }
-        _pictureList.value = list
-    }
-
-    fun remove(position: Int) {
-        list.removeAt(position)
-        _pictureList.value = list
-    }
-
     fun setMainPicture() {
         for (i in _pictureList.value!!.indices) {
             _pictureList.value!![i].main = i == itemPos.value!!.toInt()
@@ -45,6 +31,6 @@ class PictureViewModel : ViewModel() {
 
     fun checkMain(picture: ProfilePicture): Boolean = picture.main
 
-    private fun getUriResource(resId: Int): Uri =
+    fun getUriResource(resId: Int): Uri =
         Uri.parse("android.resource://find.ui/$resId")
 }
