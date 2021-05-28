@@ -73,6 +73,10 @@
     <string name="dialog_picture_main">대표사진 설정</string>
     <string name="dialog_picture_remove">삭제</string>
 
+    <!-- Interview Picture Dialog -->
+    <string name="dialog_interview_modify">인터뷰 사진 변경</string>
+    <string name="dialog_interview_title">인터뷰 사진 추가</string>
+
     <!-- Interview -->
     <string name="interview_title">인터뷰</string>
     <string name="interview_explain">상대에게 당신을 좀 더 알려주세요!</string>

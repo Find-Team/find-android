@@ -24,6 +24,8 @@ class InterviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInterviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.activity = this
+        binding.lifecycleOwner = this
 
         initValuesViewPager()
         initValuesTabLayout()
@@ -69,7 +71,13 @@ class InterviewActivity : AppCompatActivity() {
         binding.rvInterviewPhoto.adapter = PictureAdapter() { pic, pos ->
             viewModel.itemPos.value = pos
             viewModel.itemPicture.value = pic
-            clickAddImage()
+            if (pic.image == viewModel.getUriResource(R.drawable.btn_add_image)) {
+                clickAddImage()
+            } else {
+                binding.imgInterviewPrev.setImageURI(pic.image)
+                binding.tvInterviewPrev.visibility = View.INVISIBLE
+                binding.tvInterviewModify.visibility = View.VISIBLE
+            }
         }
         viewModel.setDefaultPicture()
     }
@@ -81,12 +89,12 @@ class InterviewActivity : AppCompatActivity() {
     }
 
     private fun clickAddImage() {
-        val dialog = AddPictureDialog("Interview")
+        val dialog = AddPictureDialog(getString(R.string.dialog_interview_title))
         dialog.show(supportFragmentManager, DIALOG_TAG)
     }
 
     fun clickModifyImage() {
-        val dialog = ModifyPictureDialog() {
+        val dialog = ModifyPictureDialog(getString(R.string.dialog_interview_modify)) {
         }
         dialog.show(supportFragmentManager, ModifyPictureDialog.PICTURE_TAG)
     }
@@ -110,6 +118,15 @@ class InterviewActivity : AppCompatActivity() {
 
     fun finishInterview() {
         finish()
+    }
+
+    fun removeImage() {
+        (binding.rvInterviewPhoto.adapter as PictureAdapter).changeItem(
+            viewModel.itemPos.value!!.toInt(), viewModel.getUriResource(R.drawable.btn_add_image)
+        )
+        binding.imgInterviewPrev.setImageResource(0)
+        binding.tvInterviewPrev.visibility = View.VISIBLE
+        binding.tvInterviewModify.visibility = View.INVISIBLE
     }
 
     companion object {

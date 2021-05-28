@@ -14,16 +14,16 @@ import find.ui.ui.interview.InterviewActivity
 import find.ui.ui.mypage.MyPageActivity
 import find.ui.util.autoCleared
 
-class AddPictureDialog(from: String) : DialogFragment() {
+class AddPictureDialog(private val title: String) : DialogFragment() {
     var binding by autoCleared<DialogAddPictureBinding>()
 
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
-            when (from) {
-                "Profile" -> (requireActivity() as MyPageActivity).selectImage()
-                "Interview" -> (requireActivity() as InterviewActivity).selectImage()
+            when (title) {
+                getString(R.string.dialog_picture_title) -> (requireActivity() as MyPageActivity).selectImage()
+                getString(R.string.dialog_interview_title) -> (requireActivity() as InterviewActivity).selectImage()
             }
         } else {
             Toast.makeText(requireContext(), "권한을 승인해주세요", Toast.LENGTH_SHORT).show()
@@ -35,6 +35,7 @@ class AddPictureDialog(from: String) : DialogFragment() {
         return activity?.let {
             val dialog = AlertDialog.Builder(it).create()
             dialog.setView(binding.root)
+            setTitleText()
             onClickCancel()
             onClickGet()
             dialog
@@ -66,6 +67,10 @@ class AddPictureDialog(from: String) : DialogFragment() {
             requestPermissionLauncher.launch(READ_EXTERNAL_STORAGE)
             dismiss()
         }
+    }
+
+    private fun setTitleText() {
+        binding.titlePictureDialog.text = title
     }
 
     companion object {
