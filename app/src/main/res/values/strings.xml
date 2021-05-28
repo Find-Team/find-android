@@ -126,6 +126,11 @@
     <string name="dialog_disconnect_title">상대와의 연결을 해제합니다.</string>
     <string name="dialog_disconnect_content">연결된 상대에서 리스트가 사라집니다.</string>
 
+    <!-- Matching -->
+    <string name="matching_title">매칭 현황</string>
+    <string name="matching_feeling">호감</string>
+    <string name="matching_dibs">찜</string>
+
     <!-- AnyWhere -->
     <string name="complete">완료</string>
     <string name="save">저장</string>
