@@ -86,7 +86,8 @@ class InterviewActivity : AppCompatActivity() {
     }
 
     fun clickModifyImage() {
-        val dialog = ModifyPictureDialog()
+        val dialog = ModifyPictureDialog() {
+        }
         dialog.show(supportFragmentManager, ModifyPictureDialog.PICTURE_TAG)
     }
 
