@@ -1,88 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginTop="12dp"
-    android:background="@drawable/border_white_fill_round_5"
-    android:translationZ="20dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/img_item_dibs_profile"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginVertical="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/guideline_item_dibs_img"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+    <data>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_item_dibs_img"
-        android:layout_width="wrap_content"
+        <import type="android.view.View" />
+
+        <variable
+            name="dibs"
+            type="find.ui.ui.matching.ResponseMatching" />
+
+        <variable
+            name="isMyDibs"
+            type="java.lang.Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/border_white_fill_round_5"
+        android:translationZ="20dp">
 
-    <TextView
-        android:id="@+id/tv_item_dibs_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="14dp"
-        android:text="한글_8자_옹야"
-        android:textColor="@color/gray_4f"
-        android:textSize="14dp"
-        app:layout_constraintStart_toEndOf="@id/img_item_dibs_profile"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/img_item_dibs_profile"
+            setProfileImage="@{dibs.profileImageUrl}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_item_dibs_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/tv_item_dibs_introduce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="26살 | 패션잡지에디터 | 서울, 강남"
-        android:textColor="@color/gray_bd"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="@id/tv_item_dibs_name"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_dibs_name" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_dibs_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
 
-    <ImageButton
-        android:id="@+id/btn_send_feeling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/btn_send_feeling"
-        app:layout_constraintStart_toStartOf="@id/tv_item_dibs_introduce"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_dibs_introduce"
-        tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/tv_item_dibs_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="14dp"
+            android:text="@{dibs.nickName}"
+            android:textColor="@color/gray_4f"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/img_item_dibs_profile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
 
-    <ImageButton
-        android:id="@+id/btn_send_dibs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/btn_send_dibs"
-        app:layout_constraintStart_toEndOf="@id/btn_send_feeling"
-        app:layout_constraintTop_toTopOf="@id/btn_send_feeling"
-        tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/tv_item_dibs_introduce"
+            setIntroduceText="@{dibs.age}"
+            setJobText="@{dibs.job}"
+            setLocationText="@{dibs.location}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/gray_bd"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="@id/tv_item_dibs_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_dibs_name"
+            tools:ignore="SpUsage" />
 
-    <ImageButton
-        android:id="@+id/btn_cancel_dibs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/btn_back_black_x"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/btn_send_feeling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_send_feeling"
+            app:layout_constraintStart_toStartOf="@id/tv_item_dibs_introduce"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_dibs_introduce"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel_dibs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_cancel_dibs"
+            android:visibility="@{isMyDibs? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/btn_send_feeling"
+            app:layout_constraintStart_toEndOf="@id/btn_send_feeling"
+            app:layout_constraintTop_toTopOf="@id/btn_send_feeling"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_send_dibs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_send_dibs"
+            android:visibility="@{isMyDibs? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@id/btn_send_feeling"
+            app:layout_constraintStart_toEndOf="@id/btn_send_feeling"
+            app:layout_constraintTop_toTopOf="@id/btn_send_feeling"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_delete_dibs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_back_black_x"
+            android:visibility="@{isMyDibs? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

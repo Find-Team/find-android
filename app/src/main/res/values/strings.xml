@@ -138,10 +138,12 @@
     <!-- Feeling -->
     <string name="feeling_connected_title">연결된 상대</string>
     <string name="feeling_connected_empty">연결된 상대가 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!</string>
+    <string name="feeling_connected_introduce">%d살 | %s | %s</string>
     <string name="feeling_get_title">받은 호감</string>
     <string name="feeling_get_empty">받은 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!</string>
     <string name="feeling_send_title">보낸 호감</string>
     <string name="feeling_send_empty">보낸 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!</string>
+    <string name="feeling_accept">호감 수락</string>
 
     <!-- Dibs -->
     <string name="dibs_me_title">나를 찜한 사람</string>
