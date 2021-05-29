@@ -125,12 +125,12 @@ class MyPageActivity : AppCompatActivity() {
     }
 
     private fun clickAddImage() {
-        val dialog = AddPictureDialog("Profile")
+        val dialog = AddPictureDialog(getString(R.string.dialog_picture_title))
         dialog.show(supportFragmentManager, AddPictureDialog.PICTURE_TAG)
     }
 
     fun clickModifyImage() {
-        val dialog = ModifyPictureDialog() {
+        val dialog = ModifyPictureDialog(getString(R.string.dialog_picture_modify)) {
             viewModel.setMainPicture()
             (binding.rvProfilePicture.adapter as PictureAdapter).notifyDataSetChanged()
         }
@@ -158,7 +158,13 @@ class MyPageActivity : AppCompatActivity() {
         binding.rvProfilePicture.adapter = PictureAdapter() { pic, pos ->
             viewModel.itemPos.value = pos
             viewModel.itemPicture.value = pic
-            clickAddImage()
+            if (pic.image == viewModel.getUriResource(R.drawable.btn_add_image)) {
+                clickAddImage()
+            } else {
+                binding.imgCpImagePrev.setImageURI(pic.image)
+                binding.tvCpImagePrev.visibility = View.INVISIBLE
+                binding.tvCpImageModify.visibility = View.VISIBLE
+            }
         }
         viewModel.setDefaultPicture()
     }
@@ -173,8 +179,7 @@ class MyPageActivity : AppCompatActivity() {
         (binding.rvProfilePicture.adapter as PictureAdapter).changeItem(
             viewModel.itemPos.value!!.toInt(), viewModel.getUriResource(R.drawable.btn_add_image)
         )
-        binding.imgCpImagePrev.setImageResource(R.drawable.border_white_fill_round_10)
-        binding.imgCpImagePrev.setColorFilter(binding.imgCpImagePrev.context.getColor(R.color.gray_f2))
+        binding.imgCpImagePrev.setImageResource(0)
         binding.tvCpImagePrev.visibility = View.VISIBLE
         binding.tvCpImageModify.visibility = View.INVISIBLE
     }

@@ -31,6 +31,6 @@ class InterviewViewModel : ViewModel() {
         _pictureList.value = list
     }
 
-    private fun getUriResource(resId: Int): Uri =
+    fun getUriResource(resId: Int): Uri =
         Uri.parse("android.resource://find.ui/$resId")
 }
