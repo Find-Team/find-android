@@ -50,13 +50,13 @@ class FindFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        binding.rvFindMyValue.adapter = FindMyValueAdapter()
+        binding.rvFindMyValue.adapter = FindPickedValuesAdapter()
         findViewModel.setTempList()
     }
 
     private fun setTempList() {
         findViewModel.tempList.observe(viewLifecycleOwner) {
-            (binding.rvFindMyValue.adapter as FindMyValueAdapter).submitList(it)
+            (binding.rvFindMyValue.adapter as FindPickedValuesAdapter).submitList(it)
         }
     }
 
