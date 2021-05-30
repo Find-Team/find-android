@@ -19,11 +19,10 @@ import find.ui.ui.dialog.PickerDialog
 import find.ui.ui.picture.PictureAdapter
 import find.ui.ui.picture.PictureViewModel
 import find.ui.ui.profile.ProfileGuideActivity
-import kotlin.properties.Delegates
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateProfileBinding
-    private var from by Delegates.notNull<Int>()
+    private lateinit var title: String
     private lateinit var startActivityResult: ActivityResultLauncher<Intent>
     private lateinit var getContent: ActivityResultLauncher<String>
     private val viewModel: PictureViewModel by viewModels()
@@ -41,40 +40,50 @@ class MyPageActivity : AppCompatActivity() {
 
     fun showPickerDialog(view: View) {
         when (view) {
-            binding.layoutCpInfoEdu -> from = 2
-            binding.layoutCpInfoMbti -> from = 3
-            binding.layoutCpInfoTall -> from = 4
-            binding.layoutCpInfoForm -> from = 5
-            binding.layoutCpInfoSmoke -> from = 6
-            binding.layoutCpInfoReligion -> from = 7
-            binding.layoutCpInfoMarried -> from = 8
-            binding.layoutCpInfoDrink -> from = 9
+            binding.layoutCpInfoEdu -> title = getString(R.string.profile_info_edu)
+            binding.layoutCpInfoMbti -> title = getString(R.string.profile_info_mbti)
+            binding.layoutCpInfoTall -> title = getString(R.string.profile_info_tall)
+            binding.layoutCpInfoForm -> title = getString(R.string.profile_info_form)
+            binding.layoutCpInfoSmoke -> title = getString(R.string.profile_info_smoke)
+            binding.layoutCpInfoReligion -> title = getString(R.string.profile_info_religion)
+            binding.layoutCpInfoMarried -> title = getString(R.string.profile_info_married)
+            binding.layoutCpInfoDrink -> title = getString(R.string.profile_info_drink)
         }
-        val pickerDialog = PickerDialog(from)
-        pickerDialog.show(supportFragmentManager, DIALOG_TAG)
+        val pickerDialog = PickerDialog(title)
+        pickerDialog.show(supportFragmentManager, PickerDialog.PICKER_TAG)
     }
 
     fun showTextInputDialog(view: View) {
         when (view) {
-            binding.layoutCpInfoJob -> from = 0
-            binding.layoutCpInfoOffice -> from = 1
+            binding.layoutCpInfoJob -> title = getString(R.string.dialog_info_job)
+            binding.layoutCpInfoOffice -> title = getString(R.string.dialog_info_office)
         }
-        val dialog = InfoDialog(from)
-        dialog.show(supportFragmentManager, DIALOG_TAG)
+        val dialog = InfoDialog(title)
+        dialog.show(supportFragmentManager, InfoDialog.INFO_TAG)
     }
 
-    fun changeText(from: Int, content: String) {
-        when (from) {
-            0 -> setTextStyle(binding.tvCpInfoJob, content)
-            1 -> setTextStyle(binding.tvCpInfoOffice, content)
-            2 -> setTextStyle(binding.tvCpInfoEdu, content)
-            3 -> setTextStyle(binding.tvCpInfoMbti, content)
-            4 -> setTextStyle(binding.tvCpInfoTall, content)
-            5 -> setTextStyle(binding.tvCpInfoForm, content)
-            6 -> setTextStyle(binding.tvCpInfoSmoke, content)
-            7 -> setTextStyle(binding.tvCpInfoReligion, content)
-            8 -> setTextStyle(binding.tvCpInfoMarried, content)
-            9 -> setTextStyle(binding.tvCpInfoDrink, content)
+    fun changeTextInfo(content: String) {
+        when (title) {
+            getString(R.string.dialog_info_job) ->
+                setTextStyle(binding.tvCpInfoJob, content)
+            getString(R.string.dialog_info_office) ->
+                setTextStyle(binding.tvCpInfoOffice, content)
+            getString(R.string.profile_info_edu) ->
+                setTextStyle(binding.tvCpInfoEdu, content)
+            getString(R.string.profile_info_mbti) ->
+                setTextStyle(binding.tvCpInfoMbti, content)
+            getString(R.string.profile_info_tall) ->
+                setTextStyle(binding.tvCpInfoTall, content)
+            getString(R.string.profile_info_form) ->
+                setTextStyle(binding.tvCpInfoForm, content)
+            getString(R.string.profile_info_smoke) ->
+                setTextStyle(binding.tvCpInfoSmoke, content)
+            getString(R.string.profile_info_religion) ->
+                setTextStyle(binding.tvCpInfoReligion, content)
+            getString(R.string.profile_info_married) ->
+                setTextStyle(binding.tvCpInfoMarried, content)
+            getString(R.string.profile_info_drink) ->
+                setTextStyle(binding.tvCpInfoDrink, content)
         }
     }
 
@@ -177,14 +186,11 @@ class MyPageActivity : AppCompatActivity() {
 
     fun removeImage() {
         (binding.rvProfilePicture.adapter as PictureAdapter).changeItem(
-            viewModel.itemPos.value!!.toInt(), viewModel.getUriResource(R.drawable.btn_add_image)
+            viewModel.itemPos.value!!.toInt(),
+            viewModel.getUriResource(R.drawable.btn_add_image)
         )
         binding.imgCpImagePrev.setImageResource(0)
         binding.tvCpImagePrev.visibility = View.VISIBLE
         binding.tvCpImageModify.visibility = View.INVISIBLE
-    }
-
-    companion object {
-        const val DIALOG_TAG = "Dialog"
     }
 }

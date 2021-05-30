@@ -12,7 +12,7 @@ import find.ui.ui.mypage.MyPageActivity
 import find.ui.ui.profile.ProfileViewModel
 import find.ui.util.autoCleared
 
-class InfoDialog(private val from: Int) : DialogFragment() {
+class InfoDialog(private val title: String) : DialogFragment() {
     var dialogInfoBinding by autoCleared<DialogProfileInfoBinding>()
     private val viewModel: ProfileViewModel by viewModels()
 
@@ -20,7 +20,7 @@ class InfoDialog(private val from: Int) : DialogFragment() {
         dialogInfoBinding = DialogProfileInfoBinding.inflate(requireActivity().layoutInflater)
         dialogInfoBinding.viewModel = viewModel
         dialogInfoBinding.lifecycleOwner = this
-        whereFrom()
+        setTitle()
 
         return activity?.let {
             saveInfoData()
@@ -44,26 +44,20 @@ class InfoDialog(private val from: Int) : DialogFragment() {
         }
     }
 
-    private fun whereFrom() {
-        when (from) {
-            0 -> viewModel.setTitle(
-                dialogInfoBinding.titleInfoDialog,
-                requireContext().getString(R.string.dialog_info_job)
-            )
-            1 -> viewModel.setTitle(
-                dialogInfoBinding.titleInfoDialog,
-                requireContext().getString(R.string.dialog_info_office)
-            )
-        }
+    private fun setTitle() {
+        dialogInfoBinding.titleInfoDialog.text = title
     }
 
     private fun saveInfoData() {
         dialogInfoBinding.btnInfoDialogOk.setOnClickListener {
-            (requireActivity() as MyPageActivity).changeText(
-                from,
+            (requireActivity() as MyPageActivity).changeTextInfo(
                 viewModel.infoContent.get().toString()
             )
             dismiss()
         }
+    }
+
+    companion object {
+        const val INFO_TAG = "INFO_DIALOG"
     }
 }
