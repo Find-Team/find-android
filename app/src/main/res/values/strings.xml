@@ -99,6 +99,7 @@
     <string name="find_complementary">나와\n 다르기에 매력적인\n사람을 찾아요!\n(상호보완성)</string>
     <string name="find_similarity">나와\n닮은 점이\n많은 사람을 원해요!\n(상호 유사성)</string>
     <string name="find_bang">FIND!</string>
+    <string name="found_introduce">%d살 | %s | %s | %s</string>
 
     <!-- Values -->
     <string name="value_question">가치관 문답</string>
