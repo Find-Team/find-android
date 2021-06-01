@@ -1,6 +1,7 @@
 package find.ui.ui.find
 
 import android.widget.Button
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import find.ui.R
 
@@ -29,5 +30,23 @@ object FindBinding {
                 button.backgroundTintList = button.context.getColorStateList(R.color.gray_e0)
             }
         }
+    }
+
+    @BindingAdapter("setFoundIntroduce", "setFoundJob", "setFoundCompany", "setFoundLocation")
+    @JvmStatic
+    fun setFoundIntroduce(
+        textView: TextView,
+        age: Int,
+        job: String,
+        company: String,
+        location: String
+    ) {
+        textView.text = String.format(
+            textView.context.getString(R.string.feeling_connected_introduce),
+            age,
+            job,
+            company,
+            location
+        )
     }
 }
